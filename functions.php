@@ -94,10 +94,11 @@ if ( ! function_exists( 'quomodo_starter_theme_prefix_setup' ) ) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 250,
-				'width'       => 250,
-				'flex-width'  => true,
-				'flex-height' => true,
+				'height'               => 250,
+				'width'                => 250,
+				'flex-width'           => true,
+				'flex-height'          => true,
+				'unlink-homepage-logo' => true,
 			)
 		);
 	}
@@ -140,6 +141,7 @@ add_action( 'widgets_init', 'quomodo_starter_theme_prefix_widgets_init' );
  * Enqueue scripts and styles.
  */
 function quomodo_starter_theme_prefix_scripts() {
+	wp_enqueue_style( 'bootstrap', '//cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css', array(), '5.0.0' );
 	wp_enqueue_style( 'quomodo_starter_theme_prefix-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'quomodo_starter_theme_prefix-style', 'rtl', 'replace' );
 
@@ -160,6 +162,11 @@ require get_template_directory() . '/inc/custom-header.php';
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Custom Comments Walker for this theme.
+ */
+require get_template_directory() . '/inc/Comments_Walker.php';
 
 /**
  * Functions which enhance the theme by hooking into WordPress.

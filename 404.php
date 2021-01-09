@@ -10,51 +10,33 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="qs__blog__main__container" class="qs__blog__main__container qs__blog"><!-- Main Container Start -->
+		<div class="qs__blog__inner__container"><!-- Inner Container Start -->
+			<div class="container qs__blog__container"><!-- Inner Blog Container Start -->
+				<div class="qs__error__404"><!-- ERROR 404 Start -->
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'quomodo_starter_theme_prefix' ); ?></h1>
-			</header><!-- .page-header -->
+					<div class="row"><!-- Inner Header Row -->
+						<div class="col-xs-12"><!-- Inner Header Column -->
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'quomodo_starter_theme_prefix' ); ?></p>
+							<div class="qs__page__inner__header qs__404">
+								<h3 class="qs__inner__header__title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'quomodo_starter_theme_prefix' ); ?></h3>
+							</div>
 
-					<?php
-					get_search_form();
+							<div class="search__content"><!-- Search Content  -->
+								<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'quomodo_starter_theme_prefix' ); ?></p>
 
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
+								<a href="<?php echo esc_url( home_url('/') ) ?>"><?php echo esc_html__( 'Go Back Home', 'quomodo_starter_theme_prefix' ); ?></a>
+							</div><!-- search-content End -->
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'quomodo_starter_theme_prefix' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
+						</div><!-- Inner Header Columns End -->
+					</div><!-- Inner Header Row End-->
 
-					<?php
-					/* translators: %1$s: smiley */
-					$quomodo_starter_theme_prefix_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'quomodo_starter_theme_prefix' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$quomodo_starter_theme_prefix_archive_content" );
+				</div><!-- ERROR 404 END -->
 
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
+			</div><!-- Inner Blog Container End -->
+		</div><!-- Inner Container End -->
 
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
-
-	</main><!-- #main -->
+	</main><!-- Main Container End -->
 
 <?php
 get_footer();

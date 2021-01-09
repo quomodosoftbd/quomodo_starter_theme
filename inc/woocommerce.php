@@ -118,7 +118,7 @@ if ( ! function_exists( 'quomodo_starter_theme_prefix_woocommerce_wrapper_before
 	 */
 	function quomodo_starter_theme_prefix_woocommerce_wrapper_before() {
 		?>
-			<main id="primary" class="site-main">
+			<main id="qs__blog__main__container" class="qs__blog__main__container qs__blog">
 		<?php
 	}
 }

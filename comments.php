@@ -20,58 +20,64 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<div class="qs__blog__comments__container"> <!-- Comments Container Start -->
 
-	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) :
-		?>
-		<h2 class="comments-title">
-			<?php
-			$quomodo_starter_theme_prefix_comment_count = get_comments_number();
-			if ( '1' === $quomodo_starter_theme_prefix_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'quomodo_starter_theme_prefix' ),
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			} else {
-				printf( 
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $quomodo_starter_theme_prefix_comment_count, 'comments title', 'quomodo_starter_theme_prefix' ) ),
-					number_format_i18n( $quomodo_starter_theme_prefix_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					'<span>' . wp_kses_post( get_the_title() ) . '</span>'
-				);
-			}
-			?>
-		</h2><!-- .comments-title -->
+	<div id="qs__blog__comments" class="qs__blog__comments__area"> <!-- Comments Area Start -->
 
-		<?php the_comments_navigation(); ?>
+		<?php if ( have_comments() ) : // Check for have_comments(). ?>
+			<div class="qs__blog__comments__header"><!-- Comments Header -->
+				<h3 class="qs__blog__comments__title">
+					<?php
+						$quomodo_starter_theme_prefix_comment_count = get_comments_number();
+						if ( '1' === $quomodo_starter_theme_prefix_comment_count ) {
+							printf(
+								esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'quomodo_starter_theme_prefix' ),
+								'<span>' . wp_kses_post( get_the_title() ) . '</span>'
+							);
+						} else {
+							printf(
+								esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $quomodo_starter_theme_prefix_comment_count, 'comments title', 'quomodo_starter_theme_prefix' ) ),
+								number_format_i18n( $quomodo_starter_theme_prefix_comment_count ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+								'<span>' . wp_kses_post( get_the_title() ) . '</span>'
+							);
+						}
+					?>
+				</h3>
+			</div><!-- Comments Header End -->
+			
+			<div class="qs__blog__comments__pagination">
+				<?php the_comments_navigation(); ?>
+			</div>
 
-		<ol class="comment-list">
-			<?php
-			wp_list_comments(
-				array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				)
-			);
-			?>
-		</ol><!-- .comment-list -->
+			<div class="qs__blog__comments__lists__area"><!-- Comments list Area Start -->
+				<div class="qs__blog__comments__list"><!-- Comments list Start -->
+					<?php
+						wp_list_comments(
+							array(
+								'style'      => 'div',
+								'short_ping' => true,
+								'walker'     => new quomodo_starter_theme_prefix_Custom_Walker_Comment(),
+							)
+						);
+					?>
+				</div><!-- Comments list End -->
+			</div><!-- Comments list Area End -->
 
-		<?php
-		the_comments_navigation();
+			<div class="qs__blog__comments__pagination">
+				<?php the_comments_navigation(); ?>
+			</div>
+			
+			<div class="qs__blog__colse__comment">
+				<?php if ( ! comments_open() ) : ?>
+					<p class="qs__block__no__comments__msg"><?php esc_html_e( 'Comments are closed.', 'quomodo_starter_theme_prefix' ); ?></p>
+				<?php endif; ?>
+			</div>
 
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) :
-			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'quomodo_starter_theme_prefix' ); ?></p>
-			<?php
-		endif;
+		<?php endif; // Check for have_comments(). ?>
 
-	endif; // Check for have_comments().
-
-	comment_form();
-	?>
-
-</div><!-- #comments -->
+		<div class="qs__blog__comment__form">
+			<?php comment_form(); ?>
+		</div>
+		
+	</div> <!-- Comments Area Start -->
+</div> <!-- Comments Container Start -->

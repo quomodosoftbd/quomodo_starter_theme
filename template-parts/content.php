@@ -10,54 +10,55 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+	<div class="qs__post__inner__content">
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
+		<div class="qs__post__media">
+			<?php quomodo_starter_theme_prefix_post_thumbnail(); ?>
+		</div>
+
+		<div class="qs__post__content__area">
+
+			<div class="qs__post__header">
 				<?php
-				quomodo_starter_theme_prefix_posted_on();
-				quomodo_starter_theme_prefix_posted_by();
+					if ( is_singular() ) :
+						the_title( '<h3 class="qs__post__title">', '</h3>' );
+					else :
+						the_title( '<h3 class="qs__post__title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+					endif;
 				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+			</div>
 
-	<?php quomodo_starter_theme_prefix_post_thumbnail(); ?>
+			<div class="qs__post__meta">
+				<?php if ( 'post' === get_post_type() ) : ?>
+					<?php
+						quomodo_starter_theme_prefix_posted_on();
+						quomodo_starter_theme_prefix_posted_by();
+					?>
+				<?php endif; ?>
+			</div>
 
-	<div class="entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'quomodo_starter_theme_prefix' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
+			<div class="qs__post__details">
+				<?php
 
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'quomodo_starter_theme_prefix' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
+					if( is_single() ) :
+						the_content();
+					else:
+						the_excerpt();
+					endif;
 
-	<footer class="entry-footer">
-		<?php quomodo_starter_theme_prefix_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+					wp_link_pages(
+						array(
+							'before' => '<div class="qs__link__pages">' . esc_html__( 'Pages:', 'quomodo_starter_theme_prefix' ),
+							'after'  => '</div>',
+						)
+					);
+				?>
+			</div>
+
+			<div class="qs__post__footer">
+				<?php quomodo_starter_theme_prefix_entry_footer(); ?>
+			</div>
+
+		</div>
+	</div>
 </article><!-- #post-<?php the_ID(); ?> -->
