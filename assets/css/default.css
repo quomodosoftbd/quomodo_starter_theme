@@ -39,7 +39,6 @@
 /* Forms
 	 ========================================================================== */
 
-
 /**
  * Correct the inability to style clickable types in iOS and Safari.
  */
@@ -70,7 +69,6 @@ button:-moz-focusring,
 [type="submit"]:-moz-focusring {
 	outline: 1px dotted ButtonText;
 }
-
 
 /**
  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
@@ -129,12 +127,6 @@ textarea {
 	font: inherit;
 }
 
-/* Interactive
-	 ========================================================================== */
-
-
-
-
 /* Misc
 	 ========================================================================== */
 
@@ -152,18 +144,12 @@ template {
 	display: none;
 }
 
-
-
 /*--------------------------------------------------------------
 # Base
 --------------------------------------------------------------*/
 
-/* Typography
---------------------------------------------- */
-
 /* Elements
 --------------------------------------------- */
-
 
 /* Make sure embeds and iframes fit their containers. */
 embed,
@@ -289,44 +275,12 @@ textarea {
 	width: 100%;
 }
 
-/*--------------------------------------------------------------
-# Layouts
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-# Components
---------------------------------------------------------------*/
-
-/* Navigation
---------------------------------------------- */
-
-
-
 
 /* Posts and pages
 --------------------------------------------- */
 
-
 .updated:not(.published) {
 	display: none;
-}
-
-/* .page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-} */
-
-
-
-/* Comments
---------------------------------------------- */
-.comment-content a {
-	word-wrap: break-word;
-}
-
-.bypostauthor {
-	display: block;
 }
 
 /* Widgets

@@ -7,8 +7,8 @@
  * @package Q_Blog_Starter
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_active_sidebar( 'main_sidebar' ) ) {
 	return;
 }
 ?>
-<?php dynamic_sidebar( 'sidebar-1' ); ?>
+<?php dynamic_sidebar( 'main_sidebar' ); ?>

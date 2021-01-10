@@ -1,0 +1,12 @@
+#qs__blog__main__container {
+    padding: 100px 0;
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {}
+
+@media only screen and (max-width: 991px) {
+    #qs__blog__main__container {
+        padding: 50px 0;
+    }
+}

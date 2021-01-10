@@ -76,4 +76,4 @@ get_header();
 	</main><!-- Main Container End -->
 
 <?php
-get_sidebar();
+get_footer();
