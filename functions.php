@@ -143,7 +143,7 @@ function quomodo_starter_theme_prefix_widgets_init() {
 			'description'   => esc_html__( 'Add footer widgets here.', 'quomodo_starter_theme_prefix' ),
 			'before_widget' => '<div id="%1$s" class="qs__blog__widget qs__blog__single__footer__widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h3 class="qs__blog__footer__widget__title">',
+			'before_title'  => '<h3 class="qs__blog__widget__title">',
 			'after_title'   => '</h3>',
 		)
 	);
@@ -155,7 +155,7 @@ function quomodo_starter_theme_prefix_widgets_init() {
 			'description'   => esc_html__( 'Add footer widgets here.', 'quomodo_starter_theme_prefix' ),
 			'before_widget' => '<div id="%1$s" class="qs__blog__widget qs__blog__single__footer__widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h3 class="qs__blog__footer__widget__title">',
+			'before_title'  => '<h3 class="qs__blog__widget__title">',
 			'after_title'   => '</h3>',
 		)
 	);
@@ -167,7 +167,7 @@ function quomodo_starter_theme_prefix_widgets_init() {
 			'description'   => esc_html__( 'Add footer widgets here.', 'quomodo_starter_theme_prefix' ),
 			'before_widget' => '<div id="%1$s" class="qs__blog__widget qs__blog__single__footer__widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h3 class="qs__blog__footer__widget__title">',
+			'before_title'  => '<h3 class="qs__blog__widget__title">',
 			'after_title'   => '</h3>',
 		)
 	);
@@ -179,7 +179,7 @@ function quomodo_starter_theme_prefix_widgets_init() {
 			'description'   => esc_html__( 'Add footer widgets here.', 'quomodo_starter_theme_prefix' ),
 			'before_widget' => '<div id="%1$s" class="qs__blog__widget qs__blog__single__footer__widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h3 class="qs__blog__footer__widget__title">',
+			'before_title'  => '<h3 class="qs__blog__widget__title">',
 			'after_title'   => '</h3>',
 		)
 	);
@@ -193,7 +193,8 @@ add_action( 'widgets_init', 'quomodo_starter_theme_prefix_widgets_init' );
 function quomodo_starter_theme_prefix_scripts() {
 	wp_enqueue_style( 'bootstrap', '//cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css', array(), '5.0.0' );
 	wp_enqueue_style( 'quomodo_starter_theme_prefix-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_enqueue_style( 'quomodo_starter_theme_prefix-blog', get_theme_file_uri('/assets/blog.css'), array(), _S_VERSION );
+	wp_enqueue_style( 'quomodo_starter_theme_prefix-default', get_theme_file_uri('/assets/css/default.css'), array(), _S_VERSION );
+	wp_enqueue_style( 'quomodo_starter_theme_prefix-blog', get_theme_file_uri('/assets/css/blog.css'), array(), _S_VERSION );
 	wp_style_add_data( 'quomodo_starter_theme_prefix-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'quomodo_starter_theme_prefix-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );

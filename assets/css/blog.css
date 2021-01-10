@@ -1,0 +1,255 @@
+/* ---------------------------------
+    RESET STYLE CSS
+------------------------------------*/
+
+/*
+Global
+---------------------- */
+:root {
+    --theme_color: #444444;
+    --link_color: #000000;
+    --link_hover_color: #1e90ff;
+    --body_background: #ffffff;
+    --box_shadow: 0 10px 20px rgba(0,0,0,.1);
+}
+
+/*
+Main Sidebar Widgets
+---------------------- */
+:root{
+    --widget_background: #ffffff;
+    --widget_border: 1px solid #e1e1e1;
+    --widget_border_radius: 5px;
+    --widget_box_shadow: 0 10px 20px rgba(0,0,0,.1);
+    --widget_margin:50px;
+    --widget_padding:40px 30px;
+
+    --widget_color:#444444;
+    --widget_link_color:#000000;
+    --widget_link_hover_color:#1e90ff;
+
+    --widget_title_before_font_size:20px;
+    --widget_title_before_background: #ffffff;
+    --widget_title_after_background: #e1e1e1;
+    --widget_title_before_display: inline-block;
+    --widget_title_after_display: inline-block;
+}
+
+/*
+Footer
+---------------------- */
+:root {
+    --footer_top_color: #444444;
+    --footer_top_link_color: #000000;
+    --footer_top_link_hover_color: #1e90ff;
+    --footer_top_background: #fcfcfc;
+    --footer_top_padding: 100px 0;
+    
+    --footer_bottom_color: #444444;
+    --footer_bottom_link_color: #000000;
+    --footer_bottom_link_hover_color: #1e90ff;
+    --footer_bottom_background: #dddddd;
+    --footer_bottom_padding: 20px 0;
+}
+
+/*
+Footer Sidebar Widgets
+---------------------- */
+:root{
+    --footer_widget_background: inherit;
+    --footer_widget_border: 0;
+    --footer_widget_border_radius: 0;
+    --footer_widget_box_shadow: noen;
+    --footer_widget_margin:30px;
+    --footer_widget_padding:0;
+
+    --footer_widget_color:#444444;
+    --footer_widget_link_color:#000000;
+    --footer_widget_link_hover_color:#1e90ff;
+
+    --footer_widget_title_font_size: 20px;
+    --footer_widget_title_before_background: #ffffff;
+    --footer_widget_title_after_background: #e1e1e1;
+    --footer_widget_title_before_display: inline-block;
+    --footer_widget_title_after_display: inline-block;
+}
+/* ----------------------------------
+    MAIN AREA STYLES
+-------------------------------------*/
+#qs__blog__main__container {
+    padding: 100px 0;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {}
+
+@media only screen and (max-width: 991px) {
+    #qs__blog__main__container {
+        padding: 50px 0;
+    }
+}
+/* ----------------------------------
+    BLOG POSTS AREA STYLES
+-------------------------------------*/
+
+/* ===================================
+    BLOG WIDGETS STYLES
+=====================================*/
+
+.qs__blog__widget__area {
+    padding-left: 30px;
+}
+
+.qs__blog__widget__title {
+    font-size: var( --widget_title_before_font_size );
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.qs__blog__widget__title:before {
+    content: "";
+    background: var( --widget_title_before_background );
+    display : var( --widget_title_before_display );
+    width: 5px;
+    height: 6px;
+    position: absolute;
+    right: 10px;
+    bottom: 8px;
+    z-index: 1;
+}
+
+.qs__blog__widget__title:after {
+    content: "";
+    background: var( --widget_title_after_background );
+    display : var( --widget_title_after_display );
+    width: 35px;
+    height: 4px;
+    position: relative;
+    bottom: 5px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.qs__blog__widget ol,
+.qs__blog__widget ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.qs__blog__widget ol ol,
+.qs__blog__widget ul ul {
+    padding-left: 15px;
+}
+
+.qs__blog__widget ol li,
+.qs__blog__widget ul li{
+    margin-top: 15px;
+}
+
+.qs__blog__widget ol li:first-child,
+.qs__blog__widget ul li:first-child {
+    margin-top: 0;
+}
+
+.qs__blog__widget ol li ul li:first-child,
+.qs__blog__widget ul li ul li:first-child{
+    margin-top: 15px;
+}
+
+.qs__blog__widget select {
+    width: 100%;
+    padding: 10px;
+}
+
+.qs__blog__widget__area .qs__blog__widget {
+    background: var( --widget_background );
+    border: var( --widget_border );
+    border-radius: var( --widget_border_radius );
+    box-shadow: var( --widget_box_shadow );
+    margin-bottom: var( --widget_margin );
+    padding: var( --widget_padding );
+}
+
+.qs__blog__widget__area .qs__blog__widget:last-child {
+    margin-bottom: 0;
+}
+
+/* ----------------------------------
+    ARCHIVE WIDGET
+-------------------------------------*/
+.qs__blog__widget.widget_archive ul li,
+.qs__blog__widget.widget_categories ul li,
+.qs__blog__widget.widget_meta ul li {
+    text-align: right;
+    clear: both;
+    overflow: hidden;
+}
+
+.qs__blog__widget.widget_pages ul li,
+.qs__blog__widget.widget_nav_menu ul li {
+    clear: both;
+    overflow: hidden;
+}
+
+.qs__blog__widget.widget_archive ul li a,
+.qs__blog__widget.widget_categories ul li a,
+.qs__blog__widget.widget_meta ul li a{
+    float: left;
+}
+.qs__blog__widget.widget_pages ul li a,
+.qs__blog__widget.widget_nav_menu ul li a {
+    display: block;
+}
+.qs__blog__widget.widget_archive select {
+    width: 100%;
+    padding: 10px;
+}
+
+/*====================================
+    FOOTER AREA STYLES
+=====================================*/
+.qs__blog__footer__top__area {
+    color: var( --footer_top_color );
+    background: var( --footer_top_background );
+    padding: var( --footer_top_padding );
+}
+.qs__blog__footer__top__area a{
+    color: var( --footer_top_link_color );
+}
+.qs__blog__footer__top__area a:hover{
+    color: var( --footer_top_link_hover_color );
+}
+
+.qs__blog__footer__bottom__area {
+    color: var( --footer_bottom_color );
+    background: var( --footer_bottom_background );
+    padding: var( --footer_bottom_padding );
+}
+.qs__blog__footer__bottom__area a{
+    color: var( --footer_bottom_link_color );
+}
+.qs__blog__footer__bottom__area a:hover{
+    color: var( --footer_bottom_link_hover_color );
+}
+
+.qs__blog__footer__copyright p {
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 991px) {
+    .qs__blog__footer__top__area {
+        padding: 50px 0;
+    }
+}
+
+/* ===================================
+    FOOTER WIDGETS STYLES
+=====================================*/
+.qs__blog__single__footer .qs__blog__widget {
+    margin-bottom: 30px;
+}
+
+.qs__blog__single__footer .qs__blog__widget:last-child {
+    margin-bottom: 0;
+}
