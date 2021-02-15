@@ -28,8 +28,8 @@ get_header(); ?>
 										<?php
 											the_post_navigation(
 												array(
-													'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'quomodo_starter_theme_prefix' ) . '</span> <span class="nav-title">%title</span>',
-													'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'quomodo_starter_theme_prefix' ) . '</span> <span class="nav-title">%title</span>',
+													'prev_text' => '<span class="qs__post__nav__subtitle">' . esc_html__( 'Previous:', 'quomodo_starter_theme_prefix' ) . '</span> <span class="qs__post__nav__title">%title</span>',
+													'next_text' => '<span class="qs__post__nav__subtitle">' . esc_html__( 'Next:', 'quomodo_starter_theme_prefix' ) . '</span> <span class="qs__post__nav__title">%title</span>',
 												)
 											);
 										?>

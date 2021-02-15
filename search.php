@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package Q_Blog_Starter
+ * @package QS_Blog_Starter
  */
 
 get_header();

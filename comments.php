@@ -76,7 +76,7 @@ if ( post_password_required() ) {
 		<?php endif; // Check for have_comments(). ?>
 
 		<div class="qs__blog__comment__form">
-			<?php comment_form(); ?>
+		  <?php quomodo_starter_theme_prefix_comment_form() ?>
 		</div>
 		
 	</div> <!-- Comments Area Start -->

@@ -544,21 +544,7 @@ if ( !function_exists('itbin_search_form') ) {
     }
 }
 
-/*-------------------------------------
-    SEARCH PAGE SEARCH FORM
--------------------------------------*/
-if ( !function_exists('itbin_search_page_search_form') ) {
-    function itbin_search_page_search_form() {
-        ?>
-        <div class="search-form">            
-            <form action="<?php echo esc_url(home_url('/')); ?>" method="get" _lpchecked="1">
-                <input type="text" name="s" class="form-control search-field" id="search" placeholder="<?php esc_attr_e('Enter here your search query', 'itbin'); ?>" value="<?php echo get_search_query(); ?>">
-                <button type="submit" class="search-submit search_btn"> <?php esc_html_e('Search', 'itbin') ?> </button>
-            </form>
-        </div>
-        <?php
-    }
-}
+
 
 /*------------------------------
     POST PASSWORD FORM
@@ -808,3 +794,8 @@ function itbin_kses( $raw ) {
     }
     return $allowed;
 }
+
+
+
+
+
