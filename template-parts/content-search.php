@@ -31,7 +31,7 @@
 			<div class="qs__post__meta">
 				<?php if ( 'post' === get_post_type() ) : ?>
 					<?php
-						quomodo_starter_theme_prefix_posted_on();
+						quomodo_starter_theme_prefix_posted_date();
 						quomodo_starter_theme_prefix_posted_by();
 					?>
 				<?php endif; ?>

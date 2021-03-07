@@ -38,7 +38,7 @@ get_header(); ?>
 
 									endwhile;
 
-									the_posts_navigation();
+									//the_posts_navigation();
 
 								else :
 
@@ -48,7 +48,7 @@ get_header(); ?>
 							?>
 						</div>
 						<div class="qs__blog__posts__pagination">
-
+							<?php quomodo_starter_theme_prefix_pagination(); ?>
 						</div>
 
 					</div>

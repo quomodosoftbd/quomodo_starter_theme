@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "beicons";
+  src: url("../fonts/beicons.eot");
+  src: url("../fonts/beicons.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/beicons.woff2") format("woff2"),
+       url("../fonts/beicons.woff") format("woff"),
+       url("../fonts/beicons.ttf") format("truetype"),
+       url("../fonts/beicons.svg#beicons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "beicons";
+    src: url("../fonts/beicons.svg#beicons") format("svg");
+  }
+}
+
+[class^="beicons-"]:before, [class*=" beicons-"]:before,
+[class^="beicons-"]:after, [class*=" beicons-"]:after{
+  font-family: "beicons";
+  font-style: normal;
+}
+
+.beicons-001-laptop:before { content: "\f100"; }
+.beicons-002-smartphone:before { content: "\f101"; }
+.beicons-003-lcd:before { content: "\f102"; }
+.beicons-004-tablet:before { content: "\f103"; }
+.beicons-005-photo-camera:before { content: "\f104"; }
+.beicons-006-favorite:before { content: "\f105"; }
+.beicons-007-like:before { content: "\f106"; }
+.beicons-008-favorite:before { content: "\f107"; }
+.beicons-009-share:before { content: "\f108"; }
+.beicons-010-reply:before { content: "\f109"; }
+.beicons-011-add-user:before { content: "\f10a"; }
+.beicons-012-chat:before { content: "\f10b"; }
+.beicons-013-search:before { content: "\f10c"; }
+.beicons-014-chat:before { content: "\f10d"; }
+.beicons-015-pin:before { content: "\f10e"; }
+.beicons-016-image:before { content: "\f10f"; }
+.beicons-017-audio:before { content: "\f110"; }
+.beicons-018-video-player:before { content: "\f111"; }
+.beicons-019-multimedia:before { content: "\f112"; }
+.beicons-020-hashtag:before { content: "\f113"; }
+.beicons-021-file:before { content: "\f114"; }
+.beicons-022-link:before { content: "\f115"; }
+.beicons-023-padlock:before { content: "\f116"; }
+.beicons-024-settings:before { content: "\f117"; }
+.beicons-025-share:before { content: "\f118"; }
+.beicons-026-home:before { content: "\f119"; }
+.beicons-027-file:before { content: "\f11a"; }
+.beicons-028-folder:before { content: "\f11b"; }
+.beicons-029-price-tag:before { content: "\f11c"; }
+.beicons-030-email:before { content: "\f11d"; }
+.beicons-031-chat:before { content: "\f11e"; }
+.beicons-032-group:before { content: "\f11f"; }
+.beicons-033-browser:before { content: "\f120"; }
+.beicons-034-email:before { content: "\f121"; }
+.beicons-035-author:before { content: "\f122"; }
+.beicons-036-cloud-computing:before { content: "\f123"; }
+.beicons-037-tea-cup:before { content: "\f124"; }
+.beicons-038-message:before { content: "\f125"; }
+.beicons-039-pen:before { content: "\f126"; }
+.beicons-040-wifi:before { content: "\f127"; }
+.beicons-041-pencil:before { content: "\f128"; }
+.beicons-042-pen:before { content: "\f129"; }
+.beicons-043-typewriter:before { content: "\f12a"; }
+.beicons-044-notebook:before { content: "\f12b"; }
+.beicons-045-notebook:before { content: "\f12c"; }
+.beicons-046-calendar:before { content: "\f12d"; }
+.beicons-047-hourglass:before { content: "\f12e"; }
+.beicons-048-mouse:before { content: "\f12f"; }
+.beicons-049-keyboard:before { content: "\f130"; }

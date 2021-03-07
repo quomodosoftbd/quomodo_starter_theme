@@ -12,8 +12,8 @@ if ( !function_exists( 'wp_body_open' ) ) {
 /*----------------------------
     GET SVG LOGO
 ------------------------------*/
-if ( !function_exists( 'itbin_get_logo_type_tag' ) ) {
-    function itbin_get_logo_type_tag( $url='' ){
+if ( !function_exists( 'quomodo_starter_theme_prefix_get_logo_type_tag' ) ) {
+    function quomodo_starter_theme_prefix_get_logo_type_tag( $url='' ){
         if( $url == '' ){
             return '<img src="'.esc_url( $url ).'" alt="'.get_bloginfo( 'name' ).'">';
         }
@@ -40,29 +40,29 @@ if ( !function_exists( 'itbin_get_logo_type_tag' ) ) {
 /*----------------------------
     LOGO WITH STICKY
 ------------------------------*/
-if ( !function_exists( 'itbin_logo_with_sticky' ) ){
-    function itbin_logo_with_sticky(){
+if ( !function_exists( 'quomodo_starter_theme_prefix_logo_with_sticky' ) ){
+    function quomodo_starter_theme_prefix_logo_with_sticky(){
         $default_logo = get_theme_mod( 'custom_logo' );
         $default_logo = wp_get_attachment_image_url( $default_logo, 'full');
 
-        $logo        = itbin_get_option( 'logo' );
+        $logo        = quomodo_starter_theme_prefix_get_option( 'logo' );
         $logo        = isset( $logo['url'] ) ? $logo['url'] : '';
 
-        $sticky_logo = itbin_get_option( 'sticky_logo' );
+        $sticky_logo = quomodo_starter_theme_prefix_get_option( 'sticky_logo' );
         $sticky_logo = isset( $sticky_logo['url'] ) ? $sticky_logo['url'] : '';
 
         if ( '' == $default_logo && isset( $logo ) ) {
             $default_logo = $logo;
         }
 
-        if ( '' == $sticky_logo && itbin_get_option( 'sticky_menu' ) == true ) {
+        if ( '' == $sticky_logo && quomodo_starter_theme_prefix_get_option( 'sticky_menu' ) == true ) {
             $sticky_logo = $default_logo;
         }
 
         /*---------------------------
             OVERWRITE PAGE LOGO
         ----------------------------*/
-        $page_meta_array  = itbin_metabox_value('_itbin_page_metabox');
+        $page_meta_array  = quomodo_starter_theme_prefix_metabox_value('_quomodo_starter_theme_prefix_page_metabox');
         $page_logo_switch = isset( $page_meta_array['overwrite_page_logo'] ) ? $page_meta_array['overwrite_page_logo'] : false;
 
         if( is_page() && '1' == $page_logo_switch ){            
@@ -71,7 +71,7 @@ if ( !function_exists( 'itbin_logo_with_sticky' ) ){
             $default_logo      = isset( $page_meta_array['logo']['url'] ) ? $page_meta_array['logo']['url'] : $default_logo;
             $sticky_logo       = isset( $page_meta_array['sticky_logo']['url'] ) ? $page_meta_array['sticky_logo']['url'] : $sticky_logo;
 
-            if ( empty( $sticky_logo ) && itbin_get_option( 'sticky_menu' ) == true ) {
+            if ( empty( $sticky_logo ) && quomodo_starter_theme_prefix_get_option( 'sticky_menu' ) == true ) {
                 $sticky_logo = $default_logo;
             }
         }
@@ -79,14 +79,14 @@ if ( !function_exists( 'itbin_logo_with_sticky' ) ){
         ?>
         <?php if ( !empty( $default_logo ) &&  !empty( $sticky_logo ) ) : ?>
             <a href="<?php echo esc_url( home_url('/') ); ?>" class="custom-logo-link default-logo">
-                <?php echo itbin_get_logo_type_tag( $default_logo ); ?>
+                <?php echo quomodo_starter_theme_prefix_get_logo_type_tag( $default_logo ); ?>
             </a>
             <a href="<?php echo esc_url( home_url('/') ); ?>" class="custom-logo-link sticky-logo">
-                <?php echo itbin_get_logo_type_tag( $sticky_logo ); ?>
+                <?php echo quomodo_starter_theme_prefix_get_logo_type_tag( $sticky_logo ); ?>
             </a>
-        <?php elseif( !empty( $default_logo ) && empty( $sticky_logo ) && itbin_get_option('sticky_menu') == false ): ?>
+        <?php elseif( !empty( $default_logo ) && empty( $sticky_logo ) && quomodo_starter_theme_prefix_get_option('sticky_menu') == false ): ?>
             <a href="<?php echo esc_url( home_url('/') ); ?>" class="custom-logo-link">
-                <?php echo itbin_get_logo_type_tag( $default_logo ); ?>
+                <?php echo quomodo_starter_theme_prefix_get_logo_type_tag( $default_logo ); ?>
             </a>
         <?php else: ?>
         <h3>
@@ -101,8 +101,8 @@ if ( !function_exists( 'itbin_logo_with_sticky' ) ){
 /*---------------------------
     DEFAULT LOGO
 ----------------------------*/
-if ( !function_exists('itbin_default_logo') ) {
-    function itbin_default_logo(){
+if ( !function_exists('quomodo_starter_theme_prefix_default_logo') ) {
+    function quomodo_starter_theme_prefix_default_logo(){
         if ( has_custom_logo() ) :
             the_custom_logo('navbar-brand'); 
         else: ?>
@@ -121,15 +121,15 @@ if ( !function_exists('itbin_default_logo') ) {
 /*----------------------------
     PAGE TITLE
 -----------------------------*/
-if ( !function_exists('itbin_title') ) {
-    function itbin_title(){ ?>
+if ( !function_exists('quomodo_starter_theme_prefix_title') ) {
+    function quomodo_starter_theme_prefix_title(){ ?>
         <?php
             if ( is_page() ) {
-                $page_meta_array = itbin_metabox_value('_itbin_page_metabox');
+                $page_meta_array = quomodo_starter_theme_prefix_metabox_value('_quomodo_starter_theme_prefix_page_metabox');
                 $enable_title    = isset( $page_meta_array['enable_title'] ) ? $page_meta_array['enable_title'] : false;
                 $custom_title    = isset( $page_meta_array['custom_title'] ) ? $page_meta_array['custom_title'] : '';
             }
-            $itbin_blog_title = itbin_get_option( 'blog_page_title' );
+            $quomodo_starter_theme_prefix_blog_title = quomodo_starter_theme_prefix_get_option( 'blog_page_title' );
         ?>
         <div class="barner-area white">
             <div class="barner-area-bg"></div>
@@ -140,8 +140,8 @@ if ( !function_exists('itbin_title') ) {
                         <?php if ( (is_home() && is_front_page() ) || is_page_template( 'blog-classic.php' ) ) : ?>
 
                             <div class="page-title">
-                                <?php if( $itbin_blog_title == !'' ): ?>
-                                    <h1><?php echo esc_html( $itbin_blog_title ); ?></h1>
+                                <?php if( $quomodo_starter_theme_prefix_blog_title == !'' ): ?>
+                                    <h1><?php echo esc_html( $quomodo_starter_theme_prefix_blog_title ); ?></h1>
                                 <?php else: ?>
                                 <h1>
                                     <?php esc_html_e('Blog Page','itbin'); ?>
@@ -169,10 +169,10 @@ if ( !function_exists('itbin_title') ) {
                                 </h1>
                             </div>
 
-                            <?php if( '1' == itbin_get_option( 'show_page_breadcrumb', true ) ) : ?>
+                            <?php if( '1' == quomodo_starter_theme_prefix_get_option( 'show_page_breadcrumb', true ) ) : ?>
                             <div class="breadcumb">
-                                <?php if (function_exists('itbin_breadcrumbs')) {
-                                    itbin_breadcrumbs();
+                                <?php if (function_exists('quomodo_starter_theme_prefix_breadcrumbs')) {
+                                    quomodo_starter_theme_prefix_breadcrumbs();
                                 } ?>
                             </div>
                             <?php endif; ?>
@@ -183,15 +183,15 @@ if ( !function_exists('itbin_title') ) {
                                 <h1>
                                     <?php
                                         if ( 'portfolio' == get_post_type() ) {
-                                            $title_text = itbin_get_option('portfolio_custom_title') ? itbin_get_option('portfolio_custom_title') : 'Work Details';
-                                            if ( '1' == itbin_get_option('enable_portfolio_custom_title' ) && !empty( $title_text ) ) {
+                                            $title_text = quomodo_starter_theme_prefix_get_option('portfolio_custom_title') ? quomodo_starter_theme_prefix_get_option('portfolio_custom_title') : 'Work Details';
+                                            if ( '1' == quomodo_starter_theme_prefix_get_option('enable_portfolio_custom_title' ) && !empty( $title_text ) ) {
                                                 echo esc_html( $title_text );
                                             }else{
                                                 wp_title( $sep = ' ');
                                             }
                                         }else{
-                                            $title_text = itbin_get_option('post_custom_title') ? itbin_get_option('post_custom_title') : 'News Details';
-                                            if ( '1' == itbin_get_option('enable_post_custom_title' ) && !empty( $title_text ) ) {
+                                            $title_text = quomodo_starter_theme_prefix_get_option('post_custom_title') ? quomodo_starter_theme_prefix_get_option('post_custom_title') : 'News Details';
+                                            if ( '1' == quomodo_starter_theme_prefix_get_option('enable_post_custom_title' ) && !empty( $title_text ) ) {
                                                 echo esc_html( $title_text );
                                             }else{
                                                 wp_title( $sep = ' ');
@@ -200,18 +200,18 @@ if ( !function_exists('itbin_title') ) {
                                     ?>
                                 </h1>
                                 
-                                <?php if( '1' == itbin_get_option( 'show_post_breadcrumb', true ) ) : ?>
+                                <?php if( '1' == quomodo_starter_theme_prefix_get_option( 'show_post_breadcrumb', true ) ) : ?>
                                 <div class="breadcumb">
-                                    <?php if ( function_exists('itbin_breadcrumbs') ) {
-                                        itbin_breadcrumbs();
+                                    <?php if ( function_exists('quomodo_starter_theme_prefix_breadcrumbs') ) {
+                                        quomodo_starter_theme_prefix_breadcrumbs();
                                     } ?>
                                 </div>
                                 <?php endif; ?>
 
                             </div>
-                            <?php if ( '1' == itbin_get_option('enable_post_barner_top_meta' ) ) :?>
+                            <?php if ( '1' == quomodo_starter_theme_prefix_get_option('enable_post_barner_top_meta' ) ) :?>
                             <div class="breadcumb">
-                                <?php itbin_posted_on(); ?>
+                                <?php quomodo_starter_theme_prefix_posted_on(); ?>
                             </div>
                             <?php endif; ?>
 
@@ -221,7 +221,7 @@ if ( !function_exists('itbin_title') ) {
                                     global $post;
                                     $author_id   = $post->post_author;
                                     $user_id     = get_current_user_id();
-                                    $usermeta    = get_user_meta( $user_id,'itbin_profile_options',true );
+                                    $usermeta    = get_user_meta( $user_id,'quomodo_starter_theme_prefix_profile_options',true );
                                     $designation = isset( $usermeta['designation'] ) ? $usermeta['designation'] : '';
                                 ?>
                                 <div class="single__post__author">
@@ -257,8 +257,8 @@ if ( !function_exists('itbin_title') ) {
                                 </div>
                                 <div class="breadcumb">
                                     <?php
-                                        if (function_exists('itbin_breadcrumbs')) {
-                                            itbin_breadcrumbs();
+                                        if (function_exists('quomodo_starter_theme_prefix_breadcrumbs')) {
+                                            quomodo_starter_theme_prefix_breadcrumbs();
                                         }
                                     ?>
                                     <p>
@@ -286,8 +286,8 @@ if ( !function_exists('itbin_title') ) {
                 </div>
             </div>
             <?php
-                if ( 'post' === get_post_type() && is_single() && function_exists( 'itbin_post_barner_multimeta' ) && '1' == itbin_get_option('enable_post_barner_bottom_meta' ) ) {
-                    itbin_post_barner_multimeta();
+                if ( 'post' === get_post_type() && is_single() && function_exists( 'quomodo_starter_theme_prefix_post_barner_multimeta' ) && '1' == quomodo_starter_theme_prefix_get_option('enable_post_barner_bottom_meta' ) ) {
+                    quomodo_starter_theme_prefix_post_barner_multimeta();
                 }
             ?>
         </div>
@@ -299,9 +299,9 @@ if ( !function_exists('itbin_title') ) {
 /*------------------------------
     COMMENT FORM FIELD
 -------------------------------*/
-if( ! function_exists('itbin_comment_form_default_fields') ){
+if( ! function_exists('quomodo_starter_theme_prefix_comment_form_default_fields') ){
 
-    function itbin_comment_form_default_fields($fields){
+    function quomodo_starter_theme_prefix_comment_form_default_fields($fields){
         global $aria_req;
         $commenter     = wp_get_current_commenter();
         $req           = get_option( 'require_name_email' );
@@ -329,15 +329,15 @@ if( ! function_exists('itbin_comment_form_default_fields') ){
         return $fields;
     }
 }
-add_filter('comment_form_default_fields', 'itbin_comment_form_default_fields');
+add_filter('comment_form_default_fields', 'quomodo_starter_theme_prefix_comment_form_default_fields');
 
 
 /*-----------------------------------------
     OVERWRITE COMMENT FORM DEFAULT
 -------------------------------------------*/
-if( ! function_exists('itbin_comment_form_defaults') ){
+if( ! function_exists('quomodo_starter_theme_prefix_comment_form_defaults') ){
 
-    function itbin_comment_form_defaults( $defaults ) {
+    function quomodo_starter_theme_prefix_comment_form_defaults( $defaults ) {
         global $aria_req;
         $defaults = array(
             'class_form'    => 'comment-form',
@@ -351,18 +351,18 @@ if( ! function_exists('itbin_comment_form_defaults') ){
         return $defaults;
     }    
 }
-add_filter( 'comment_form_defaults', 'itbin_comment_form_defaults' );
+add_filter( 'comment_form_defaults', 'quomodo_starter_theme_prefix_comment_form_defaults' );
 
 
 /*--------------------------
     POSTS PAGINATION
 ---------------------------*/
-if ( !function_exists('itbin_pagination') ) {
-    function itbin_pagination(){
+if ( !function_exists('quomodo_starter_theme_prefix_pagination') ) {
+    function quomodo_starter_theme_prefix_pagination(){
         the_posts_pagination(array(
             'screen_reader_text' => ' ',
-            'prev_text'          => '<i class="ti-arrow-left"></i>',
-            'next_text'          => '<i class="ti-arrow-right"></i>',
+            'prev_text'          => '<i class="fas fa-chevron-left"></i>',
+            'next_text'          => '<i class="fas fa-chevron-right"></i>',
             'type'               => 'list',
             'mid_size'           => 1,
         ));
@@ -372,8 +372,8 @@ if ( !function_exists('itbin_pagination') ) {
 /*------------------------
     POSTS PAGINATION CUSTOM
 -------------------------*/
-if ( !function_exists('itbin_custom_pagination') ) {
-    function itbin_custom_pagination( $query = false ){
+if ( !function_exists('quomodo_starter_theme_prefix_custom_pagination') ) {
+    function quomodo_starter_theme_prefix_custom_pagination( $query = false ){
 
         global $wp_query;
         if ($query) {
@@ -408,8 +408,8 @@ if ( !function_exists('itbin_custom_pagination') ) {
 /*------------------------
     POSTS NAVIGATION
 --------------------------*/
-if ( !function_exists('itbin_navigation') ) {
-    function itbin_navigation(){
+if ( !function_exists('quomodo_starter_theme_prefix_navigation') ) {
+    function quomodo_starter_theme_prefix_navigation(){
         the_posts_navigation(array(
             'screen_reader_text' => ' ',        
             'prev_text'          => '<i class="ti ti-angle-double-left"></i> '.esc_html__( 'Older posts', 'itbin' ),
@@ -421,8 +421,8 @@ if ( !function_exists('itbin_navigation') ) {
 /*------------------------
     SINGLE POST NAVIGATION
 --------------------------*/
-if ( !function_exists('itbin_single_navigation') ) {
-    function itbin_single_navigation(){
+if ( !function_exists('quomodo_starter_theme_prefix_single_navigation') ) {
+    function quomodo_starter_theme_prefix_single_navigation(){
         the_post_navigation( array(
             'screen_reader_text' => ' ',  
             'prev_text'          => '<i class="ti ti-angle-double-left"></i> '.esc_html__( 'Prev Post', 'itbin' ),
@@ -434,8 +434,8 @@ if ( !function_exists('itbin_single_navigation') ) {
 /*----------------------
     SINGLE POST NAVIGATION
 ------------------------*/
-if ( !function_exists('itbin_post_navigation') ) {
-    function itbin_post_navigation(){
+if ( !function_exists('quomodo_starter_theme_prefix_post_navigation') ) {
+    function quomodo_starter_theme_prefix_post_navigation(){
         global $post;
         $next_post = get_adjacent_post(false, '', false);
         $prev_post = get_adjacent_post(false, '', true);
@@ -482,8 +482,8 @@ if ( !function_exists('itbin_post_navigation') ) {
 /*------------------------
     COMMENTS PAGINATION
 -------------------------*/
-if ( !function_exists('itbin_comments_pagination') ) {
-    function itbin_comments_pagination(){
+if ( !function_exists('quomodo_starter_theme_prefix_comments_pagination') ) {
+    function quomodo_starter_theme_prefix_comments_pagination(){
         the_comments_pagination(array(
             'screen_reader_text' => ' ',
             'prev_text'          => '<i class="ti-arrow-left"></i>',
@@ -497,8 +497,8 @@ if ( !function_exists('itbin_comments_pagination') ) {
 /*------------------------
     COMMENTS NAVIGATION
 -------------------------*/
-if ( !function_exists('itbin_comments_navigation') ) {
-    function itbin_comments_navigation(){
+if ( !function_exists('quomodo_starter_theme_prefix_comments_navigation') ) {
+    function quomodo_starter_theme_prefix_comments_navigation(){
         the_comments_navigation(array(
             'screen_reader_text' => ' ',
             'prev_text'          => '<i class="ti ti-angle-double-left"></i> '.esc_html__( 'Older Comments', 'itbin' ),
@@ -510,8 +510,8 @@ if ( !function_exists('itbin_comments_navigation') ) {
 /*----------------------------------
     SINGLE POST / PAGES LINK PAGES
 ------------------------------------*/
-if ( !function_exists('itbin_link_pages') ) {
-    function itbin_link_pages(){
+if ( !function_exists('quomodo_starter_theme_prefix_link_pages') ) {
+    function quomodo_starter_theme_prefix_link_pages(){
         wp_link_pages( array(
             'before'           => '<div class="page-links post-pagination"><p>' . esc_html__( 'Pages:', 'itbin' ).'</p><ul><li>',
             'separator'        => '</li><li>',
@@ -526,8 +526,8 @@ if ( !function_exists('itbin_link_pages') ) {
 /*----------------------------
     SEARCH FORM
 ------------------------------*/
-if ( !function_exists('itbin_search_form') ) {
-    function itbin_search_form(  $search_buttton=true, $is_button=true ) {
+if ( !function_exists('quomodo_starter_theme_prefix_search_form') ) {
+    function quomodo_starter_theme_prefix_search_form(  $search_buttton=true, $is_button=true ) {
         ?>
         <div class="search-form">
             <form id="search-form" action="<?php echo esc_url(home_url('/')); ?>">
@@ -549,8 +549,8 @@ if ( !function_exists('itbin_search_form') ) {
 /*------------------------------
     POST PASSWORD FORM
 -------------------------------*/
-if ( !function_exists('itbin_password_form') ) {
-    function itbin_password_form($form) {
+if ( !function_exists('quomodo_starter_theme_prefix_password_form') ) {
+    function quomodo_starter_theme_prefix_password_form($form) {
     global $post;
     $label  =   'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
     $form   =   '<form class="protected-post-form" action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
@@ -561,14 +561,14 @@ if ( !function_exists('itbin_password_form') ) {
     return $form;
     }
 }
-add_filter( 'the_password_form', 'itbin_password_form' );
+add_filter( 'the_password_form', 'quomodo_starter_theme_prefix_password_form' );
 
 
 /*-------------------------------
     ADD CATEGORY NICENAMES IN BODY AND POST CLASS
 --------------------------------*/
-if ( !function_exists('itbin_post_class') ) {
-   function itbin_post_class( $classes ) {
+if ( !function_exists('quomodo_starter_theme_prefix_post_class') ) {
+   function quomodo_starter_theme_prefix_post_class( $classes ) {
     
         global $post;
         if ( 'page' === get_post_type() ) {
@@ -584,23 +584,21 @@ if ( !function_exists('itbin_post_class') ) {
                 $classes[] = 'blog-classic';
             }
 
-            if ( is_single() ) {
-                $classes[] = 'single-post-item';
-            }else{
-                $classes[] = 'single-post-item mb40';
+            if ( !is_single() ) {
+                $classes[] = 'qs__post__item';
             }
         }
         return $classes;
     }
 }
-add_filter( 'post_class', 'itbin_post_class' );
+add_filter( 'post_class', 'quomodo_starter_theme_prefix_post_class' );
 
 
 /*-------------------------------
     DAY LINK TO ARCHIVE PAGE
 ---------------------------------*/
-if ( !function_exists('itbin_day_link') ) {
-    function itbin_day_link() {
+if ( !function_exists('quomodo_starter_theme_prefix_day_link') ) {
+    function quomodo_starter_theme_prefix_day_link() {
         $archive_year   = get_the_time('Y');
         $archive_month  = get_the_time('m');
         $archive_day    = get_the_time('d');
@@ -611,8 +609,8 @@ if ( !function_exists('itbin_day_link') ) {
 /*--------------------------------
     GET COMMENT COUNT TEXT
 ----------------------------------*/
-if ( !function_exists('itbin_comment_count_text') ) {
-    function itbin_comment_count_text($post_id) {
+if ( !function_exists('quomodo_starter_theme_prefix_comment_count_text') ) {
+    function quomodo_starter_theme_prefix_comment_count_text($post_id) {
         $comments_number = get_comments_number($post_id);
         if($comments_number==0) {
             $comment_text = esc_html__('No comment', 'itbin');
@@ -628,8 +626,8 @@ if ( !function_exists('itbin_comment_count_text') ) {
 /*------------------------------------------
     GET POST TYPE ARRAY
 --------------------------------------------*/
-if ( !function_exists('itbin_get_post_array') ) {
-    function itbin_get_post_array($post_type = 'elementor_library') {
+if ( !function_exists('quomodo_starter_theme_prefix_get_post_array') ) {
+    function quomodo_starter_theme_prefix_get_post_array($post_type = 'elementor_library') {
         $query  = new WP_Query(
             array (
                 'post_type'      => $post_type,
@@ -654,10 +652,10 @@ if ( !function_exists('itbin_get_post_array') ) {
  * @param string $html
  * @return string
  */
-function itbin_remove_custom_logo_schema_attr( $html ) {
+function quomodo_starter_theme_prefix_remove_custom_logo_schema_attr( $html ) {
     return str_replace( array( 'itemprop="url"', 'itemprop="logo"' ), '', $html );
 }
-add_filter( 'get_custom_logo', 'itbin_remove_custom_logo_schema_attr' );
+add_filter( 'get_custom_logo', 'quomodo_starter_theme_prefix_remove_custom_logo_schema_attr' );
 
 
 /**
@@ -666,7 +664,7 @@ add_filter( 'get_custom_logo', 'itbin_remove_custom_logo_schema_attr' );
  * @param string $html
  * @return string
  */
-function itbin_remove_oembed_schema_attr($return, $data, $url){
+function quomodo_starter_theme_prefix_remove_oembed_schema_attr($return, $data, $url){
     if( is_object( $data ) ){
         $return = str_ireplace(
             array( 
@@ -680,24 +678,24 @@ function itbin_remove_oembed_schema_attr($return, $data, $url){
     }
     return $return;
 }
-add_filter( 'oembed_dataparse', 'itbin_remove_oembed_schema_attr', 10, 3 );
+add_filter( 'oembed_dataparse', 'quomodo_starter_theme_prefix_remove_oembed_schema_attr', 10, 3 );
 
 
 /**
- * itbin_move_comment_field_to_bottom() Remove cookie field and move comment field bottom.
+ * quomodo_starter_theme_prefix_move_comment_field_to_bottom() Remove cookie field and move comment field bottom.
  * @param  $fields array()
  * @return return comment form fields
  */
-function itbin_move_comment_field_to_bottom( $fields ) {
+function quomodo_starter_theme_prefix_move_comment_field_to_bottom( $fields ) {
     $comment_field = $fields['comment'];
     unset( $fields['comment'] );
     unset( $fields['cookies'] );
     $fields['comment'] = $comment_field;
     return $fields;
 }
-add_filter( 'comment_form_fields', 'itbin_move_comment_field_to_bottom' );
+add_filter( 'comment_form_fields', 'quomodo_starter_theme_prefix_move_comment_field_to_bottom' );
 
-function itbin_kses( $raw ) {
+function quomodo_starter_theme_prefix_kses( $raw ) {
     $allowed_tags = array(
         'a' => array(
             'class'  => array(),

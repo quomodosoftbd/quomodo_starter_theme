@@ -267,6 +267,14 @@ select {
 	border: 1px solid #ccc;
 }
 
+select {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: #1c223a;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: #ffffff url(../img/arrow.png) no-repeat center right 16px / auto;
+}
 textarea {
 	width: 100%;
 }

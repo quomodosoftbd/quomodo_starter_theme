@@ -191,6 +191,8 @@ add_action( 'widgets_init', 'quomodo_starter_theme_prefix_widgets_init' );
  * Enqueue scripts and styles.
  */
 function quomodo_starter_theme_prefix_scripts() {
+	wp_enqueue_style( 'beicons', get_theme_file_uri('/assets/css/beicons.css'), array(), '1.0.0' );
+	wp_enqueue_style( 'fontawesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css', array(), '5.0.0' );
 	wp_enqueue_style( 'bootstrap', '//cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css', array(), '5.0.0' );
 	wp_enqueue_style( 'quomodo_starter_theme_prefix-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_enqueue_style( 'quomodo_starter_theme_prefix-default', get_theme_file_uri('/assets/css/default.css'), array(), _S_VERSION );
@@ -224,6 +226,7 @@ require get_theme_file_path('/inc/Comments_Walker.php');
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+require get_template_directory() . '/inc/custom-functions.php';
 
 /**
  * Customizer additions.

@@ -12,11 +12,23 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="qs__post__inner__content">
 
+		<?php //if( has_post_thumbnail() ) : ?>
 		<div class="qs__post__media">
 			<?php quomodo_starter_theme_prefix_post_thumbnail(); ?>
 		</div>
+		<?php //endif; ?>
 
 		<div class="qs__post__content__area">
+
+			<div class="qs__post__meta">
+				<?php if ( 'post' === get_post_type() ) : ?>
+					<?php
+						quomodo_starter_theme_prefix_single_category_retrip();
+						quomodo_starter_theme_prefix_comment_count();
+						quomodo_starter_theme_prefix_posted_date();
+					?>
+				<?php endif; ?>
+			</div>
 
 			<div class="qs__post__header">
 				<?php
@@ -26,15 +38,6 @@
 						the_title( '<h3 class="qs__post__title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
 					endif;
 				?>
-			</div>
-
-			<div class="qs__post__meta">
-				<?php if ( 'post' === get_post_type() ) : ?>
-					<?php
-						quomodo_starter_theme_prefix_posted_on();
-						quomodo_starter_theme_prefix_posted_by();
-					?>
-				<?php endif; ?>
 			</div>
 
 			<div class="qs__post__details">

@@ -14,11 +14,23 @@ Global
 }
 
 /*
+Blog Posts
+---------------------- */
+:root{
+    --post_background: #ffffff;
+    --post_border: 1px solid #e1e1e1;
+    --post_content_border: 1px solid #e1e1e1;
+}
+
+/*
 Main Sidebar Widgets
 ---------------------- */
 :root{
     --widget_background: #ffffff;
+    --widget_colored_bg: #1e90ff;
+    --widget_colored_bg_text_color: #ffffff;
     --widget_border: 1px solid #e1e1e1;
+    --widget_colored_border: 1px solid #1e90ff;
     --widget_border_radius: 5px;
     --widget_box_shadow: 0 10px 20px rgba(0,0,0,.1);
     --widget_margin:50px;
@@ -73,6 +85,20 @@ Footer Sidebar Widgets
     --footer_widget_title_before_display: inline-block;
     --footer_widget_title_after_display: inline-block;
 }
+
+
+
+/* ----------------------------------
+    GOLBALS STYLES
+-------------------------------------*/
+p:last-of-type {
+    margin-bottom: 0;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
 /* ----------------------------------
     MAIN AREA STYLES
 -------------------------------------*/
@@ -90,6 +116,148 @@ Footer Sidebar Widgets
 /* ----------------------------------
     BLOG POSTS AREA STYLES
 -------------------------------------*/
+.qs__blog__content .qs__post__item {
+    background:var(--post_background);
+    margin-bottom: 50px;
+}
+
+.qs__blog__content .qs__post__item:last-child {
+    margin-bottom: 0;
+}
+
+.qs__blog__content .qs__post__meta {
+    display: flex;
+    align-items: center;
+}
+
+.qs__blog__content .qs__post__meta > div {
+    margin-right: 15px;
+}
+
+
+
+.qs__blog__content .qs__post__media {
+}
+
+.qs__blog__content .qs__post__content__area {
+    padding: 30px;
+    border: var( --post_content_border );
+}
+
+.qs__blog__content .qs__post__title {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.qs__blog__content .qs__post__details {
+    margin-top: 20px;
+}
+
+.qs__blog__content .qs__post__footer {
+    margin-top: 30px;
+}
+
+.qs__blog__content .qs__blgo__single__category a,
+.qs__post__content .qs__blgo__single__category a {
+    display: inline-block;
+    padding: 8px 12px;
+    background: dodgerblue;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #ffffff;
+    line-height: 1;
+}
+.qs__blog__content .qs__post__footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+/* ----------------------------------
+    POST FORMAT STICKY
+-------------------------------------*/
+.qs__blog__content .sticky .qs__post__content__area {
+    position: relative;
+    z-index: 1;
+}
+.qs__blog__content .sticky .qs__post__content__area:before {
+    content: "\f126";
+    display: block;
+    font-family: 'beicons';
+    font-size: 70px;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    line-height: 1;
+    z-index: -1;
+    opacity: .2;
+}
+
+/* ----------------------------------
+    BLOG POSTS PAGINATION
+-------------------------------------*/
+.qs__blog__posts__pagination {
+    margin-top: 50px;
+}
+.qs__blog__posts__pagination ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.qs__blog__posts__pagination ul li {
+    display: inline;
+}
+
+.qs__blog__posts__pagination ul li a,
+.qs__blog__posts__pagination ul li span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #e1e1e1;
+    text-align: center;
+    line-height: 1;
+    padding-top: 14px;
+    margin-right: 8px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
+    border-radius: 5px;
+    color: #444;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.qs__blog__posts__pagination ul li a:hover,
+.qs__blog__posts__pagination ul li span.current {
+    background: dodgerblue;
+    color: #fff;
+    border: 1px solid dodgerblue;
+}
+
+
+/* ----------------------------------
+    SINGLE POST DETAILS
+------------------------------------*/
+.qs__post__content .qs__post__meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.qs__post__content .qs__post__meta > div {
+    margin-right: 15px;
+}
+
+.qs__post__content .qs__post__header {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.qs__post__content .qs__post__header .qs__post__title {
+    margin-bottom: 0;
+}
 
 /* ===================================
     BLOG WIDGETS STYLES
@@ -206,6 +374,175 @@ Footer Sidebar Widgets
     padding: 10px;
 }
 
+/* ----------------------------------
+    CALENDAR WIDGETS
+-------------------------------------*/
+#wp-calendar {
+    margin: 0;
+    width: 100%;
+}
+
+#wp-calendar > caption {
+    background: var( --widget_colored_bg );
+    color: var( --widget_colored_bg_text_color );
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    caption-side: top;
+    font-weight: 500;
+}
+
+#wp-calendar th {
+    background: #f6f9ff;
+    padding: 5px 0;
+    text-align: center;
+    color: #252525;
+    font-size: 14px;
+}
+
+#wp-calendar tfoot td {
+    border: medium none;
+    padding-top: 5px;
+}
+
+#wp-calendar tfoot td#next {
+    text-align: right;
+}
+
+#wp-calendar tbody td {
+    border: var( --widget_border );
+    padding: 5px 0;
+    text-align: center;
+}
+
+#wp-calendar tbody td a {
+    position: relative;
+}
+
+#wp-calendar tbody td a:before {
+    background: #e6eeff;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    margin: 0;
+    top: 0;
+    width: 100%;
+    border-radius: 50%;
+    height: 100%;
+}
+
+#wp-calendar tbody td#today {
+    border: var( --widget_colored_border );
+}
+#wp-calendar tfoot tr {
+    border: var( --widget_border );
+}
+#wp-calendar tfoot tr td {
+    padding: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+#wp-calendar tbody td#today{
+    position: relative;
+}
+#wp-calendar tbody td#today:before {
+    background: var( --widget_colored_bg );
+    content: "";
+    height: 100%;
+    width: 1px;
+    position: absolute;
+    left: -1px;
+    top: 0;
+}
+
+/* ----------------------------------
+    RECENT POSTS WIDGETS
+-------------------------------------*/
+.qs__blog__widget.widget_recent_entries li > a {
+    font-weight: 500;
+}
+.qs__blog__widget.widget_recent_entries li .post-date {
+    font-size: 14px;
+    display: block;
+}
+
+/* ----------------------------------
+    RECENT COMMENTS WIDGETS
+-------------------------------------*/
+.qs__blog__widget.widget_recent_comments li > a {
+    font-weight: 500;
+}
+.qs__blog__widget.widget_recent_comments .comment-author-link {
+    display: block;
+    font-weight: 500;
+}
+
+
+/* ----------------------------------
+    RSS WIDGETS
+-------------------------------------*/
+.qs__blog__widget.widget_rss li > a {
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.qs__blog__widget.widget_rss .rss-date {
+    display: block;
+    margin: 10px 0;
+}
+
+.qs__blog__widget.widget_rss cite {
+    margin-top: 10px;
+    display: inline-block;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.qs__blog__widget.widget_rss li:last-child cite {
+    margin-bottom: 0;
+}
+
+/* ----------------------------------
+    TEXT WIDGETS
+-------------------------------------*/
+.qs__blog__widget.widget_text p:last-of-type {
+    margin-bottom: 15px;
+}
+.qs__blog__widget.widget_text p strong {
+    margin: 5px 0;
+    display: inline-block;
+}
+
+/* ----------------------------------
+    SEARCH WIDGETS
+-------------------------------------*/
+.qs__blog__widget .qs__blog__search__form {
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+}
+.qs__blog__widget .qs__blog__search__form input {
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+    line-height: 1;
+    text-transform: capitalize;
+    border: var( --widget_border );
+    border-radius: var( --widget_border_radius );
+}
+.qs__blog__widget .qs__blog__search__form button {
+    background: var( --widget_colored_bg );
+    border-radius: var( --widget_border_radius );
+    color:var( --widget_colored_bg_text_color );
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 100%;
+}
+.qs__blog__widget .qs__blog__search__form button:hover,
+.qs__blog__widget .qs__blog__search__form button:focus {
+    background: var( --widget_colored_bg );
+}
 /*====================================
     FOOTER AREA STYLES
 =====================================*/

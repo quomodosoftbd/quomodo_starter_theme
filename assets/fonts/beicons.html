@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<!--
+  beicons icon font: beicons
+  Creation date: 19/10/2020 15:53
+-->
+<html>
+    <!DOCTYPE html>
+
+    <head>
+        <title>beicons WebFont</title>
+        <link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="../css/beicons.css">
+        <meta charset="UTF-8">
+        <style>
+            html, body, div, span, applet, object, iframe,
+            h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+            a, abbr, acronym, address, big, cite, code,
+            del, dfn, em, img, ins, kbd, q, s, samp,
+            small, strike, strong, sub, sup, tt, var,
+            b, u, i, center,
+            dl, dt, dd, ol, ul, li,
+            fieldset, form, label, legend,
+            table, caption, tbody, tfoot, thead, tr, th, td,
+            article, aside, canvas, details, embed,
+            figure, figcaption, footer, header, hgroup,
+            menu, nav, output, ruby, section, summary,
+            time, mark, audio, video {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-size: 100%;
+                font: inherit;
+                vertical-align: baseline;
+            }
+            /* HTML5 display-role reset for older browsers */
+            article, aside, details, figcaption, figure,
+            footer, header, hgroup, menu, nav, section {
+                display: block;
+            }
+            body {
+                line-height: 1;
+            }
+            ol, ul {
+                list-style: none;
+            }
+            blockquote, q {
+                quotes: none;
+            }
+            blockquote:before, blockquote:after,
+            q:before, q:after {
+                content: '';
+                content: none;
+            }
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+            body {
+                font-family: 'Varela Round', Helvetica, Arial, sans-serif;
+                font-size: 16px;
+                color: #222;
+            }
+            a {
+                color: #333;
+                border-bottom: 1px solid #a9fd00;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            * {
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+            [class^="beicons-"]:before, [class*=" beicons-"]:before, [class^="beicons-"]:after, [class*=" beicons-"]:after {
+                font-family: beicons;
+                font-size: 30px;
+                font-style: normal;
+                margin-left: 20px;
+                color: #333;
+            }
+            .wrapper {
+                max-width: 600px;
+                margin: auto;
+                padding: 0 1em;
+            }
+            .title {
+                font-size: 1.25em;
+                text-align: center;
+                margin-bottom: 1em;
+                text-transform: uppercase;
+            }
+            header {
+                text-align: center;
+                background-color: #222;
+                color: #fff;
+                padding: 1em;
+            }
+            header .logo {
+                width: 210px;
+                height: 38px;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 1em;
+                border: none;
+            }
+            header strong {
+                font-size: 1.95em;
+                font-weight: bold;
+                vertical-align: middle;
+                margin-top: 5px;
+                display: inline-block;
+            }
+            .demo {
+                margin: 2em auto;
+                line-height: 1.25em;
+            }
+            .demo ul li {
+                margin-bottom: 1em;
+            }
+            .demo ul li .num {
+                color: #222;
+                border-radius: 20px;
+                display: inline-block;
+                width: 26px;
+                padding: 3px;
+                height: 26px;
+                text-align: center;
+                margin-right: 0.5em;
+                border: 1px solid #222;
+            }
+            .demo ul li code {
+                background-color: #222;
+                border-radius: 4px;
+                padding: 0.25em 0.5em;
+                display: inline-block;
+                color: #fff;
+                font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+                font-weight: lighter;
+                margin-top: 1em;
+                font-size: 0.8em;
+                word-break: break-all;
+            }
+            .demo ul li code.big {
+                padding: 1em;
+                font-size: 0.9em;
+            }
+            .demo ul li code .red {
+                color: #EF3159;
+            }
+            .demo ul li code .green {
+                color: #ACFF65;
+            }
+            .demo ul li code .yellow {
+                color: #FFFF99;
+            }
+            .demo ul li code .blue {
+                color: #99D3FF;
+            }
+            .demo ul li code .purple {
+                color: #A295FF;
+            }
+            .demo ul li code .dots {
+                margin-top: 0.5em;
+                display: block;
+            }
+            #glyphs {
+                border-bottom: 1px solid #ccc;
+                padding: 2em 0;
+                text-align: center;
+            }
+            .glyph {
+                display: inline-block;
+                width: 9em;
+                margin: 1em;
+                text-align: center;
+                vertical-align: top;
+                background: #FFF;
+            }
+            .glyph .glyph-icon {
+                padding: 10px;
+                display: block;
+                font-family:"beicons";
+                font-size: 64px;
+                line-height: 1;
+            }
+            .glyph .glyph-icon:before {
+                font-size: 64px;
+                color: #222;
+                margin-left: 0;
+            }
+            .class-name {
+                font-size: 0.65em;
+                background-color: #222;
+                color: #fff;
+                border-radius: 4px 4px 0 0;
+                padding: 0.5em;
+                color: #FFFF99;
+                font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+            }
+            .author-name {
+                font-size: 0.6em;
+                background-color: #fcfcfd;
+                border: 1px solid #DEDEE4;
+                border-top: 0;
+                border-radius: 0 0 4px 4px;
+                padding: 0.5em;
+            }
+            .class-name:last-child {
+                font-size: 10px;
+                color:#888;
+            }
+            .class-name:last-child a {
+                font-size: 10px;
+                color:#555;
+            }
+            .class-name:last-child a:hover {
+                color:#a9fd00;
+            }
+            .glyph > input {
+                display: block;
+                width: 100px;
+                margin: 5px auto;
+                text-align: center;
+                font-size: 12px;
+                cursor: text;
+            }
+            .glyph > input.icon-input {
+                font-family:"beicons";
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            .attribution .title {
+                margin-top: 2em;
+            }
+            .attribution textarea {
+                background-color: #fcfcfd;
+                padding: 1em;
+                border: none;
+                box-shadow: none;
+                border: 1px solid #DEDEE4;
+                border-radius: 4px;
+                resize: none;
+                width: 100%;
+                height: 150px;
+                font-size: 0.8em;
+                font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+                -webkit-appearance: none;
+            }
+            .iconsuse {
+                margin: 2em auto;
+                text-align: center;
+                max-width: 1200px;
+            }
+            .iconsuse:after {
+                content: '';
+                display: table;
+                clear: both;
+            }
+            .iconsuse .image {
+                float: left;
+                width: 25%;
+                padding: 0 1em;
+            }
+            .iconsuse .image p {
+                margin-bottom: 1em;
+            }
+            .iconsuse .image span {
+                display: block;
+                font-size: 0.65em;
+                background-color: #222;
+                color: #fff;
+                border-radius: 4px;
+                padding: 0.5em;
+                color: #FFFF99;
+                margin-top: 1em;
+                font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+            }
+            #footer {
+                text-align: center;
+                background-color: #4C5B5C;
+                color: #7c9192;
+                padding: 1em;
+            }
+            #footer a {
+                border: none;
+                color: #a9fd00;
+                font-weight: normal;
+            }
+            @media (max-width: 960px) {
+                .iconsuse .image {
+                    width: 50%;
+                }
+            }
+            @media (max-width: 560px) {
+                .iconsuse .image {
+                    width: 100%;
+                }
+            }
+            .attrDiv {
+
+            }
+        </style>
+        <link rel="stylesheet" href="beicons.css">
+    </head>
+
+    <body class="characters-off">
+
+        <section class="demo wrapper">
+            <p class="title">Instructions</p>
+            <ul>
+                <li>
+                    <span class="num">1</span>Copy the "Fonts" files and CSS files to your website CSS folder.
+                </li>
+                <li>
+                    <span class="num">2</span>Add the CSS link to your website source code on header.
+                    <code class="big">
+                        &lt;<span class="red">head</span>&gt;
+                        <br/><span class="dots">...</span>
+                        <br/>&lt;<span class="red">link</span> <span class="green">rel</span>=<span class="yellow">"stylesheet"</span> <span class="green">type</span>=<span class="yellow">"text/css"</span> <span class="green">href</span>=<span class="yellow">"your_website_domain/css_root/beicons.css"</span>&gt;
+                        <br/><span class="dots">...</span>
+                        <br/>&lt;/<span class="red">head</span>&gt;
+                    </code>
+                </li>
+
+                <li>
+                    <p>
+                        <span class="num">3</span>Use the icon class on <code>"<span class="blue">display</span>:<span class="purple"> inline</span>"</code> elements:
+                        <br />
+                        Use example:
+                        <code>
+                            &lt;<span class="red">i</span> <span class="green">class</span>=<span class="yellow">&quot;beicons-airplane49&quot;</span>&gt;&lt;/<span class="red">i</span>&gt;
+                        </code> or
+                        <code>&lt;<span class="red">span</span> <span class="green">class</span>=<span class="yellow">&quot;beicons-airplane49&quot;</span>&gt;&lt;/<span class="red">span</span>&gt;</code>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="glyphs">
+            
+            <div class="glyph"><div class="glyph-icon beicons-001-laptop"></div>
+                <div class="class-name">.beicons-001-laptop</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-002-smartphone"></div>
+                <div class="class-name">.beicons-002-smartphone</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-003-lcd"></div>
+                <div class="class-name">.beicons-003-lcd</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-004-tablet"></div>
+                <div class="class-name">.beicons-004-tablet</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-005-photo-camera"></div>
+                <div class="class-name">.beicons-005-photo-camera</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-006-favorite"></div>
+                <div class="class-name">.beicons-006-favorite</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-007-like"></div>
+                <div class="class-name">.beicons-007-like</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-008-favorite"></div>
+                <div class="class-name">.beicons-008-favorite</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-009-share"></div>
+                <div class="class-name">.beicons-009-share</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-010-reply"></div>
+                <div class="class-name">.beicons-010-reply</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-011-add-user"></div>
+                <div class="class-name">.beicons-011-add-user</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-012-chat"></div>
+                <div class="class-name">.beicons-012-chat</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-013-search"></div>
+                <div class="class-name">.beicons-013-search</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-014-chat"></div>
+                <div class="class-name">.beicons-014-chat</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-015-pin"></div>
+                <div class="class-name">.beicons-015-pin</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-016-image"></div>
+                <div class="class-name">.beicons-016-image</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-017-audio"></div>
+                <div class="class-name">.beicons-017-audio</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-018-video-player"></div>
+                <div class="class-name">.beicons-018-video-player</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-019-multimedia"></div>
+                <div class="class-name">.beicons-019-multimedia</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-020-hashtag"></div>
+                <div class="class-name">.beicons-020-hashtag</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-021-file"></div>
+                <div class="class-name">.beicons-021-file</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-022-link"></div>
+                <div class="class-name">.beicons-022-link</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-023-padlock"></div>
+                <div class="class-name">.beicons-023-padlock</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-024-settings"></div>
+                <div class="class-name">.beicons-024-settings</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-025-share"></div>
+                <div class="class-name">.beicons-025-share</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-026-home"></div>
+                <div class="class-name">.beicons-026-home</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-027-file"></div>
+                <div class="class-name">.beicons-027-file</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-028-folder"></div>
+                <div class="class-name">.beicons-028-folder</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-029-price-tag"></div>
+                <div class="class-name">.beicons-029-price-tag</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-030-email"></div>
+                <div class="class-name">.beicons-030-email</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-031-chat"></div>
+                <div class="class-name">.beicons-031-chat</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-032-group"></div>
+                <div class="class-name">.beicons-032-group</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-033-browser"></div>
+                <div class="class-name">.beicons-033-browser</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-034-email"></div>
+                <div class="class-name">.beicons-034-email</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-035-author"></div>
+                <div class="class-name">.beicons-035-author</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-036-cloud-computing"></div>
+                <div class="class-name">.beicons-036-cloud-computing</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-037-tea-cup"></div>
+                <div class="class-name">.beicons-037-tea-cup</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-038-message"></div>
+                <div class="class-name">.beicons-038-message</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-039-pen"></div>
+                <div class="class-name">.beicons-039-pen</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-040-wifi"></div>
+                <div class="class-name">.beicons-040-wifi</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-041-pencil"></div>
+                <div class="class-name">.beicons-041-pencil</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-042-pen"></div>
+                <div class="class-name">.beicons-042-pen</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-043-typewriter"></div>
+                <div class="class-name">.beicons-043-typewriter</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-044-notebook"></div>
+                <div class="class-name">.beicons-044-notebook</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-045-notebook"></div>
+                <div class="class-name">.beicons-045-notebook</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-046-calendar"></div>
+                <div class="class-name">.beicons-046-calendar</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-047-hourglass"></div>
+                <div class="class-name">.beicons-047-hourglass</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-048-mouse"></div>
+                <div class="class-name">.beicons-048-mouse</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+            <div class="glyph"><div class="glyph-icon beicons-049-keyboard"></div>
+                <div class="class-name">.beicons-049-keyboard</div>
+                <div class="author-name">Author: <a href="http://www.freepik.com" title="Freepik">Freepik</a> </div>
+            </div>
+            
+        </section>
+
+        <section class="iconsuse">
+            <div class="title">Examples:</div>
+            
+            <div class="image">
+                <p>
+                    <i class="glyph-icon beicons-001-laptop"></i>
+                    <span>&lt;i class=&quot;beicons-001-laptop&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            
+            <div class="image">
+                <p>
+                    <i class="glyph-icon beicons-002-smartphone"></i>
+                    <span>&lt;i class=&quot;beicons-002-smartphone&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            
+            <div class="image">
+                <p>
+                    <i class="glyph-icon beicons-003-lcd"></i>
+                    <span>&lt;i class=&quot;beicons-003-lcd&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            
+            <div class="image">
+                <p>
+                    <i class="glyph-icon beicons-004-tablet"></i>
+                    <span>&lt;i class=&quot;beicons-004-tablet&quot;&gt;&lt;/i&gt;</span>
+                </p>
+            </div>
+            
+        </section>
+    </body>
+</html>

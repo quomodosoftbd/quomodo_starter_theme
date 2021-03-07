@@ -7,7 +7,9 @@
  * @package Q_Blog_Starter
  */
 
-get_header(); ?>
+get_header(); 
+
+?>
 
 	<main id="qs__blog__main__container" class="qs__blog__main__container qs__single__post"> <!-- Main Container Start -->
 		<div class="qs__blog__inner__container"> <!-- Inner Container Start -->
