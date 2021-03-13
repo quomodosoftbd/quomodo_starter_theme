@@ -98,6 +98,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:hover {
     -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    box-shadow: 0 0 0 1000px white inset !important;
 }
 /* ----------------------------------
     MAIN AREA STYLES
@@ -136,9 +137,6 @@ input:-webkit-autofill:hover {
 }
 
 
-
-.qs__blog__content .qs__post__media {
-}
 
 .qs__blog__content .qs__post__content__area {
     padding: 30px;
