@@ -501,7 +501,7 @@ if ( !function_exists('quomodo_starter_theme_prefix_comments_navigation') ) {
     function quomodo_starter_theme_prefix_comments_navigation(){
         the_comments_navigation(array(
             'screen_reader_text' => ' ',
-            'prev_text'          => '<i class="ti ti-angle-double-left"></i> '.esc_html__( 'Older Comments', 'itbin' ),
+            'prev_text'          => '<i class="ti ti-angle-double-left"></i> '.esc_html__( 'Older Comments ', 'itbin' ),
             'next_text'          => esc_html__( 'Newer Comments', 'itbin' ).' <i class="ti ti-angle-double-right"></i>',
         ));
     }

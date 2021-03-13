@@ -46,7 +46,7 @@ if ( post_password_required() ) {
 			</div><!-- Comments Header End -->
 			
 			<div class="qs__blog__comments__pagination">
-				<?php the_comments_navigation(); ?>
+				<?php quomodo_starter_theme_prefix_comments_navigation(); ?>
 			</div>
 
 			<div class="qs__blog__comments__lists__area"><!-- Comments list Area Start -->
@@ -64,7 +64,7 @@ if ( post_password_required() ) {
 			</div><!-- Comments list Area End -->
 
 			<div class="qs__blog__comments__pagination">
-				<?php the_comments_navigation(); ?>
+				<?php quomodo_starter_theme_prefix_comments_navigation(); ?>
 			</div>
 			
 			<div class="qs__blog__colse__comment">

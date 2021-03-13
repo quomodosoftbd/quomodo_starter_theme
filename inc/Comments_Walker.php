@@ -3,7 +3,7 @@
 
 class quomodo_starter_theme_prefix_Custom_Walker_Comment extends Walker_Comment {
 
-    /**
+    /** 
      * Outputs a comment in the HTML5 format.
      *
      * @see wp_list_comments()
