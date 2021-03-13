@@ -123,7 +123,7 @@ endif;
 if ( !function_exists('quomodo_starter_theme_prefix_comment_count') ) :
 	function quomodo_starter_theme_prefix_comment_count(){
 	    if (! post_password_required() && ( comments_open() || get_comments_number() ) && get_comments_number() > 0 ) {
-	        $comment_count = get_comments_number_text(esc_html__('0','quomodo_starter_theme_prefix'),esc_html__('1','quomodo_starter_theme_prefix'),esc_html__('%','quomodo_starter_theme_prefix'));
+	        $comment_count = get_comments_number_text(esc_html__('0 Comment','quomodo_starter_theme_prefix'),esc_html__('1 Comment','quomodo_starter_theme_prefix'),esc_html__('% Comments','quomodo_starter_theme_prefix'));
 	        echo '<div class="post__comment__count">
 			        <i class="beicons-012-chat"></i>
 			        <a class="comment__count" href="'.get_the_permalink().'">'.$comment_count.'</a>
@@ -217,107 +217,6 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 	}
 endif;
 
-
-function quomodo_starter_theme_prefix_comment_form(){
-        // theme option panel 
-		$comment_fld_cookie = quomodo_starter_theme_prefix_get_option('comment_cookie'); 
-		$comment_fld_url = quomodo_starter_theme_prefix_get_option('comment_url'); 
-		$comment_arg_be_note = quomodo_starter_theme_prefix_get_option('comment_before_note'); 
-		$comment_arg_after_note = quomodo_starter_theme_prefix_get_option('comment_after_note'); 
-	     
-			//Declare Vars
-		$comment_send      = esc_html__('Send','quomodo_starter_theme_prefix');
-		$comment_reply     = esc_html__('Leave a Message','quomodo_starter_theme_prefix');
-		$comment_reply_to  = esc_html__('Reply','quomodo_starter_theme_prefix');
-		$comment_author    = esc_html__('Name','quomodo_starter_theme_prefix');
-		$comment_email     = esc_html__('E-Mail','quomodo_starter_theme_prefix');
-		$comment_body      = esc_html__('Comment','quomodo_starter_theme_prefix');
-		$comment_url       = esc_html__('Website','quomodo_starter_theme_prefix');
-		$comment_cookies_1 = esc_html__(' By commenting you accept the','quomodo_starter_theme_prefix');
-		$comment_cookies_2 = esc_html__(' Privacy Policy','quomodo_starter_theme_prefix');
-		$comment_before    = esc_html__('Registration isn\'t required.','quomodo_starter_theme_prefix');
-		$comment_after     = esc_html__('Do not spam.','quomodo_starter_theme_prefix');
-		$comment_cancel    = esc_html__('Cancel Reply','quomodo_starter_theme_prefix');
-		$name_submit       = esc_html__('Submit','quomodo_starter_theme_prefix');
-		
-		//Array
-		$comments_args = array(
-			//Define Fields
-			'fields' => array(
-				//Author field
-				'author' => '<div class="qs__blog__comment__comment__form__author"><input id="author" name="author" aria-required="true" placeholder="' . $comment_author .'"></input></div>',
-				//Email Field
-				'email' => '<div class="qs__blog__comment__comment__form__email"><input id="email" name="email" placeholder="' . $comment_email .'"></input></div>',
-				
-			),
-			// Change the title of send button
-			'label_submit' => $comment_send,
-			// Change the title of the reply section
-			'title_reply'        => $comment_reply,
-			'title_reply_before' => '<h3 id="qs__blog__comment__comment__reply__title" class="qs__blog__comment__comment__reply__title">',
-			'title_reply_after'  => '</h3>',
-			// Change the title of the reply section
-			'title_reply_to' => $comment_reply_to,
-			//Cancel Reply Text
-			'cancel_reply_link' => $comment_cancel,
-			// Redefine your own textarea (the comment body).
-			'comment_field' => '<div class="qs__blog__comment__form__comment"><textarea id="qs__blog__comment_textarea" name="comment" aria-required="true" placeholder="' . $comment_body .'"></textarea></div>',
-			//Message Before Comment
-			'comment_notes_before' => $comment_before,
-			// Remove "Text or HTML to be displayed after the set of comment fields".
-			'comment_notes_after' => $comment_after,
-			//Submit Button ID
-			'id_submit'       => 'qs__blog__comment__submit',
-			'class_submit'    => 'qs__blog__comment__submit',
-			'name_submit'     => $name_submit,
-			'submit_button'   => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
-			'submit_field'    => '<div class="qs__blog__comment__form__submit">%1$s %2$s</div>',
-			'class_container' => 'qs__blog__comment_form_responds',
-			'class_form'      => 'qs__blog__comment_form_action',
-			'format'          => 'html5',
-			
-			
-		);
-
-		if( is_user_logged_in() ){
-			$user              = wp_get_current_user();
-			$user_identity     = $user->exists() ? $user->display_name : '';
-			$comments_args['logged_in_as'] = sprintf(
-				'<div class="qs__blog__comment__logged__in__as">%s</div>',
-				sprintf(
-					/* translators: 1: Edit user link, 2: Accessibility text, 3: User name, 4: Logout URL. */
-					__( '<a href="%1$s" aria-label="%2$s">Logged in as %3$s</a>. <a href="%4$s">Log out?</a>','quomodo_starter_theme_prefix' ),
-					get_edit_user_link(),
-					/* translators: %s: User name. */
-					esc_attr( sprintf( __( 'Logged in as %s. Edit your profile.','quomodo_starter_theme_prefix' ), $user_identity ) ),
-					$user_identity,
-					/** This filter is documented in wp-includes/link-template.php */
-					wp_logout_url( apply_filters( 'the_permalink', get_permalink( get_the_ID() ), get_the_ID() ) )
-				)
-				);
-			
-		}
-
-		if( $comment_fld_cookie ){
-			 //Cookies
-		   $comments_args['fields']['cookies'] =  '<input class="qs__blog__comment_cookies" type="checkbox" required>' . $comment_cookies_1 . '<a href="' . get_privacy_policy_url() . '">' . $comment_cookies_2 . '</a>';	
-		}else{
-			remove_action( 'set_comment_cookies', 'wp_set_comment_cookies' );
-		}
-		
-		$comments_args['fields']['url'] = '<div class="qs__blog__comment__comment__form__url"><input id="url" name="url" placeholder="' . $comment_url .'"></input></div>';	
-		if( !$comment_fld_url ){
-			$comments_args['fields']['url'] = '';	
-		}
-
-		if( !$comment_arg_be_note ){
-			$comments_args['comment_notes_before'] = '';
-		}
-		if(!$comment_arg_after_note){
-			$comments_args['comment_notes_after'] = '';
-		}
-		comment_form( $comments_args );
-}
 
 add_filter('get_comment_author_link', 'quomodo_starter_theme_prefix__comment_author_link',10,3);
 

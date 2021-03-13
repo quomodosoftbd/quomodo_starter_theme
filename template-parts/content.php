@@ -26,6 +26,7 @@
 						quomodo_starter_theme_prefix_single_category_retrip();
 						quomodo_starter_theme_prefix_comment_count();
 						quomodo_starter_theme_prefix_posted_date();
+						quomodo_starter_theme_prefix_posted_by();
 					?>
 				<?php endif; ?>
 			</div>

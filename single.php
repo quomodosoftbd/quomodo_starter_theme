@@ -28,12 +28,13 @@ get_header();
 									
 									<div class="qs__blog__posts__navigation">
 										<?php
-											the_post_navigation(
+											/* the_post_navigation(
 												array(
 													'prev_text' => '<span class="qs__post__nav__subtitle">' . esc_html__( 'Previous:', 'quomodo_starter_theme_prefix' ) . '</span> <span class="qs__post__nav__title">%title</span>',
 													'next_text' => '<span class="qs__post__nav__subtitle">' . esc_html__( 'Next:', 'quomodo_starter_theme_prefix' ) . '</span> <span class="qs__post__nav__title">%title</span>',
 												)
-											);
+											); */
+											quomodo_starter_theme_prefix_post_navigation();
 										?>
 									</div>
 

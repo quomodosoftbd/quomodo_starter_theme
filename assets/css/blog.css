@@ -128,6 +128,7 @@ input:-webkit-autofill:hover {
 .qs__blog__content .qs__post__meta {
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .qs__blog__content .qs__post__meta > div {
@@ -143,10 +144,12 @@ input:-webkit-autofill:hover {
     padding: 30px;
     border: var( --post_content_border );
 }
-
-.qs__blog__content .qs__post__title {
+.qs__post__header {
     margin-bottom: 20px;
-    margin-top: 20px;
+}
+.qs__post__title {
+    margin: 0;
+    padding: 0;
 }
 
 .qs__blog__content .qs__post__details {
@@ -252,13 +255,92 @@ input:-webkit-autofill:hover {
 }
 
 .qs__post__content .qs__post__header {
-    margin-top: 20px;
     margin-bottom: 20px;
 }
-.qs__post__content .qs__post__header .qs__post__title {
-    margin-bottom: 0;
+
+.qs__post__content .qs__post__details {
+    margin-top: 20px;
 }
 
+.qs__post__content .qs__post__footer {
+    margin-top: 50px;
+    clear:both;
+}
+
+.qs__blog__post__tags__links a {
+    display: inline-block;
+    padding: 8px 20px;
+    text-transform: capitalize;
+    background: #f8f9fa;
+    line-height: 1;
+    border-radius: 3px;
+}
+
+.qs__blog__post__tags__links a:hover {
+    background: dodgerblue;
+    color: #fff;
+}
+
+/* -----------------------------------
+    BLOG POST NAVIGATION
+-------------------------------------- */
+.qs__blog__posts__navigation {
+    margin-top: 50px;
+}
+.qs__blog__single__post__navigation {
+    position: relative;
+}
+
+.qs__blog__prev__post{
+    width: 50%;
+    float: left;
+}
+.qs__blog__next__post {
+    width: 50%;
+    float: right;
+    text-align: right;
+}
+
+.qs__navigation__arrow__icon {
+    display: inline;
+}
+
+.qs__blog__prev__post .qs__navigation__arrow__icon {
+    margin-right: 10px;
+}
+
+.qs__blog__next__post .qs__navigation__arrow__icon {
+    margin-left: 10px;
+}
+
+.qs__navigation__nextprev__text {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.qs__blog__post__nvigation__title {
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 22px;
+    line-height: 1.3;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+.qs__blog__single__post__navigation__center__grid {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    width: 60px;
+    font-size: 50px;
+    line-height: 1;
+    height: 100%;
+}
 /* ===================================
     BLOG WIDGETS STYLES
 =====================================*/

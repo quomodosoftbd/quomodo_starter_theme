@@ -353,106 +353,108 @@ if( ! function_exists('quomodo_starter_theme_prefix_comment_form_defaults') ){
     }    
 }
 add_filter( 'comment_form_defaults', 'quomodo_starter_theme_prefix_comment_form_defaults' );
+
+
 function quomodo_starter_theme_prefix_comment_form(){
     // theme option panel 
-  $comment_fld_cookie = binduz_option('comment_cookie','no'); 
-  $comment_fld_url = binduz_option('comment_url','no'); 
-  $comment_arg_be_note = binduz_option('comment_before_note'); 
-  $comment_arg_after_note = binduz_option('comment_after_note'); 
+    $comment_fld_cookie = quomodo_starter_theme_prefix_get_option('comment_cookie'); 
+    $comment_fld_url = quomodo_starter_theme_prefix_get_option('comment_url'); 
+    $comment_arg_be_note = quomodo_starter_theme_prefix_get_option('comment_before_note'); 
+    $comment_arg_after_note = quomodo_starter_theme_prefix_get_option('comment_after_note'); 
+     
+        //Declare Vars
+    $comment_send      = esc_html__('Send','quomodo_starter_theme_prefix');
+    $comment_reply     = esc_html__('Leave a Message','quomodo_starter_theme_prefix');
+    $comment_reply_to  = esc_html__('Reply','quomodo_starter_theme_prefix');
+    $comment_author    = esc_html__('Name','quomodo_starter_theme_prefix');
+    $comment_email     = esc_html__('E-Mail','quomodo_starter_theme_prefix');
+    $comment_body      = esc_html__('Comment','quomodo_starter_theme_prefix');
+    $comment_url       = esc_html__('Website','quomodo_starter_theme_prefix');
+    $comment_cookies_1 = esc_html__(' By commenting you accept the','quomodo_starter_theme_prefix');
+    $comment_cookies_2 = esc_html__(' Privacy Policy','quomodo_starter_theme_prefix');
+    $comment_before    = esc_html__('Registration isn\'t required.','quomodo_starter_theme_prefix');
+    $comment_after     = esc_html__('Do not spam.','quomodo_starter_theme_prefix');
+    $comment_cancel    = esc_html__('Cancel Reply','quomodo_starter_theme_prefix');
+    $name_submit       = esc_html__('Submit','quomodo_starter_theme_prefix');
     
-     //Declare Vars
-  $comment_send      = esc_html__( 'Send','binduz' );
-  $comment_reply     = esc_html__( 'Leave a Message','binduz' );
-  $comment_reply_to  = esc_html__( 'Reply','binduz' );
-  $comment_author    = esc_html__( 'Name','binduz' );
-  $comment_email     = esc_html__( 'E-Mail','binduz' );
-  $comment_body      = esc_html__( 'Comment','binduz' );
-  $comment_url       = esc_html__( 'Website','binduz' );
-  $comment_cookies_1 = esc_html__( ' By commenting you accept the' , 'binduz' );
-  $comment_cookies_2 = esc_html__( ' Privacy Policy','binduz' );
-  $comment_before    = ''; // esc_html__('Registration isn\'t required.','binduz')
-  $comment_after     = ''; // esc_html__('Do not spam.','binduz')
-  $comment_cancel    = esc_html__('Cancel Reply','binduz');
-  $name_submit       = esc_html__('Submit','binduz');
-  
-  //Array
-  $comments_args = array(
-     //Define Fields
-     'fields' => array(
-        //Author field
-        'author' => '<div class="qs__blog__comment__comment__form__author binduz-er-input-box"><input id="author" name="author" aria-required="true" placeholder="' . $comment_author .'"></input></div>',
-        //Email Field
-        'email' => '<div class="qs__blog__comment__comment__form__email binduz-er-input-box"><input id="email" name="email" placeholder="' . $comment_email .'"></input></div>',
+    //Array
+    $comments_args = array(
+        //Define Fields
+        'fields' => array(
+            //Author field
+            'author' => '<div class="row"><div class="col-6"> <div class="qs__blog__comment__comment__form__author"><input id="author" name="author" aria-required="true" placeholder="' . $comment_author .'"></input></div></div>',
+            //Email Field
+            'email' => '<div class="col-6"><div class="qs__blog__comment__comment__form__email"><input id="email" name="email" placeholder="' . $comment_email .'"></input></div></div></div>',
+            
+        ),
+        // Change the title of send button
+        'label_submit' => $comment_send,
+        // Change the title of the reply section
+        'title_reply'        => $comment_reply,
+        'title_reply_before' => '<h3 id="qs__blog__comment__comment__reply__title" class="qs__blog__comment__comment__reply__title">',
+        'title_reply_after'  => '</h3>',
+        // Change the title of the reply section
+        'title_reply_to' => $comment_reply_to,
+        //Cancel Reply Text
+        'cancel_reply_link' => $comment_cancel,
+        // Redefine your own textarea (the comment body).
+        'comment_field' => '<div class="row"><div class="col-12"><div class="qs__blog__comment__form__comment"><textarea id="qs__blog__comment_textarea" name="comment" aria-required="true" placeholder="' . $comment_body .'"></textarea></div></div></div>',
+        //Message Before Comment
+        'comment_notes_before' => $comment_before,
+        // Remove "Text or HTML to be displayed after the set of comment fields".
+        'comment_notes_after' => $comment_after,
+        //Submit Button ID
+        'id_submit'       => 'qs__blog__comment__submit',
+        'class_submit'    => 'qs__blog__comment__submit',
+        'name_submit'     => $name_submit,
+        'submit_button'   => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
+        'submit_field'    => '<div class="row"><div class="col-12"><div class="qs__blog__comment__form__submit">%1$s %2$s</div></div></div>',
+        'class_container' => 'qs__blog__comment_form_responds',
+        'class_form'      => 'qs__blog__comment_form_action',
+        'format'          => 'html5',
         
-     ),
-     // Change the title of send button
-     'label_submit' => $comment_send,
-     // Change the title of the reply section
-     'title_reply'        => $comment_reply,
-     'title_reply_before' => '<div class="binduz-er-blog-post-title"> <h3 id="qs__blog__comment__comment__reply__title " class="qs__blog__comment__comment__reply__title binduz-er-title">',
-     'title_reply_after'  => '</h3></div>',
-     // Change the title of the reply section
-     'title_reply_to' => $comment_reply_to,
-     //Cancel Reply Text
-     'cancel_reply_link' => $comment_cancel,
-     // Redefine your own textarea (the comment body).
-     'comment_field' => '<div class="qs__blog__comment__form__comment binduz-er-input-box"><textarea id="qs__blog__comment_textarea" name="comment" aria-required="true" placeholder="' . $comment_body .'"></textarea></div>',
-     //Message Before Comment
-     'comment_notes_before' => $comment_before,
-     // Remove "Text or HTML to be displayed after the set of comment fields".
-     'comment_notes_after' => $comment_after,
-     //Submit Button ID
-     'id_submit'       => 'qs__blog__comment__submit',
-     'class_submit'    => 'qs__blog__comment__submit binduz-er-main-btn',
-     'name_submit'     => $name_submit,
-     'submit_button'   => '<button id="%2$s" class="%3$s binduz-er-main-btn" name="%1$s" type="submit" class="binduz-er-main-btn">%4$s</button> ',
-     'submit_field'    => '<div class="qs__blog__comment__form__submit binduz-er-input-box text-end mt-15">%1$s %2$s</div>',
-     'class_container' => 'qs__blog__comment_form_responds',
-     'class_form'      => 'qs__blog__comment_form_action',
-     'format'          => 'html5',
-     
-     
-  );
- 
-  if( is_user_logged_in() ){
-     $user              = wp_get_current_user();
-     $user_identity     = $user->exists() ? $user->display_name : '';
-     $comments_args['logged_in_as'] = sprintf(
-        '<div class="qs__blog__comment__logged__in__as">%s</div>',
-        sprintf(
-           /* translators: 1: Edit user link, 2: Accessibility text, 3: User name, 4: Logout URL. */
-           __( '<a href="%1$s" aria-label="%2$s">Logged in as %3$s</a>. <a href="%4$s">Log out?</a>','binduz' ),
-           get_edit_user_link(),
-           /* translators: %s: User name. */
-           esc_attr( sprintf( __( 'Logged in as %s. Edit your profile.','binduz' ), $user_identity ) ),
-           $user_identity,
-           /** This filter is documented in wp-includes/link-template.php */
-           wp_logout_url( apply_filters( 'the_permalink', get_permalink( get_the_ID() ), get_the_ID() ) )
-        )
-        );
-     
-  }
- 
-  if( $comment_fld_cookie == 'yes' ){
-      //Cookies
-     $comments_args['fields']['cookies'] =  '<input class="qs__blog__comment_cookies" type="checkbox" required>' . $comment_cookies_1 . '<a href="' . get_privacy_policy_url() . '">' . $comment_cookies_2 . '</a>';	
-  }else{
-     remove_action( 'set_comment_cookies', 'wp_set_comment_cookies' );
-  }
-  
-  $comments_args['fields']['url'] = '<div class="qs__blog__comment__comment__form__url"><input id="url" name="url" placeholder="' . $comment_url .'"></input></div>';	
-  if( $comment_fld_url !='yes' ){
-     $comments_args['fields']['url'] = '';	
-  }
- 
-  if( $comment_arg_be_note !='' ){
-     $comments_args['comment_notes_before'] = '';
-  }
-  if( $comment_arg_after_note !='' ){
-     $comments_args['comment_notes_after'] = '';
-  }
-  comment_form( $comments_args );
- }
+        
+    );
+
+    if( is_user_logged_in() ){
+        $user              = wp_get_current_user();
+        $user_identity     = $user->exists() ? $user->display_name : '';
+        $comments_args['logged_in_as'] = sprintf(
+            '<div class="qs__blog__comment__logged__in__as">%s</div>',
+            sprintf(
+                /* translators: 1: Edit user link, 2: Accessibility text, 3: User name, 4: Logout URL. */
+                __( '<a href="%1$s" aria-label="%2$s">Logged in as %3$s</a>. <a href="%4$s">Log out?</a>','quomodo_starter_theme_prefix' ),
+                get_edit_user_link(),
+                /* translators: %s: User name. */
+                esc_attr( sprintf( __( 'Logged in as %s. Edit your profile.','quomodo_starter_theme_prefix' ), $user_identity ) ),
+                $user_identity,
+                /** This filter is documented in wp-includes/link-template.php */
+                wp_logout_url( apply_filters( 'the_permalink', get_permalink( get_the_ID() ), get_the_ID() ) )
+            )
+            );
+        
+    }
+
+    if( $comment_fld_cookie ){
+         //Cookies
+       $comments_args['fields']['cookies'] =  '<input class="qs__blog__comment_cookies" type="checkbox" required>' . $comment_cookies_1 . '<a href="' . get_privacy_policy_url() . '">' . $comment_cookies_2 . '</a>';	
+    }else{
+        remove_action( 'set_comment_cookies', 'wp_set_comment_cookies' );
+    }
+    
+    $comments_args['fields']['url'] = '<div class="row"><div class="col-12"><div class="qs__blog__comment__comment__form__url"><input id="url" name="url" placeholder="' . $comment_url .'"></input></div></div></div>';	
+    if( !$comment_fld_url ){
+        $comments_args['fields']['url'] = '';	
+    }
+
+    if( !$comment_arg_be_note ){
+        $comments_args['comment_notes_before'] = '';
+    }
+    if(!$comment_arg_after_note){
+        $comments_args['comment_notes_after'] = '';
+    }
+    comment_form( $comments_args );
+}
 
 /*--------------------------
     POSTS PAGINATION
@@ -489,8 +491,8 @@ if ( !function_exists('quomodo_starter_theme_prefix_custom_pagination') ) {
         $big_data = 999999999;
         echo '<nav class="navigation pagination"><div class="nav-links">';
         echo paginate_links(array(
-            'prev_text'          => '<i class="ti-arrow-left"></i>',
-            'next_text'          => '<i class="ti-arrow-right"></i>',
+            'prev_text'          => '<i class="fas fa-chevron-left"></i>',
+            'next_text'          => '<i class="fas fa-chevron-right"></i>',
             'screen_reader_text' => ' ',
             'mid_size'           => 1,
             'base'               => get_pagenum_link(1) . '%_%',
@@ -539,36 +541,55 @@ if ( !function_exists('quomodo_starter_theme_prefix_post_navigation') ) {
         global $post;
         $next_post = get_adjacent_post(false, '', false);
         $prev_post = get_adjacent_post(false, '', true);
+
+        $show_center_grid    = get_option('show_post_navigation_center_grid', 1 );
+        $show_icon           = get_option('show_post_navigation_icon', 1 );
+        $show_nextprev_text  = get_option('show_post_navigation_label', 1 );
+        $show_post_title = get_option('show_post_navigation_post_title', 1 );
         ?>
-        <div class="single-post-navigation">
+        <div class="qs__blog__single__post__navigation">
 
             <?php if( !empty($prev_post) ): ?>
-            <div class="prev-post">
+            <div class="qs__blog__prev__post">
                 <a href="<?php echo esc_url( get_permalink($prev_post->ID) ); ?>">
-                    <div class="arrow-link">
-                        <i class="fa fa-arrow-left"></i>
-                    </div>
-                    <div class="title-with-link">
-                        <span><?php esc_html_e( 'Prev Post', 'itbin' ) ?></span>
-                        <h3><?php echo esc_html( wp_trim_words( $prev_post->post_title, 4, '.' ) ); ?></h3>
+                    <div class="qs__navigation__title__with__link">
+                        <?php if( $show_nextprev_text == true ) : ?>
+                            <?php if( $show_icon == true ) : ?>
+                                <div class="qs__navigation__arrow__icon">
+                                    <i class="fa fa-arrow-left"></i>
+                                </div>
+                            <?php endif; ?>
+                            <span class="qs__navigation__nextprev__text"><?php esc_html_e( 'Prev Post', 'itbin' ) ?></span>
+                        <?php endif; ?>
+                        <?php if( $show_post_title == true ) : ?>
+                            <h3 class="qs__blog__post__nvigation__title"><?php echo esc_html( wp_trim_words( $prev_post->post_title, 4, '.' ) ); ?></h3>
+                        <?php endif; ?>
                     </div>
                 </a>
             </div>
             <?php endif; ?>
-
-            <div class="single-post-navigation-center-grid">
+            
+            <?php if( $show_center_grid == true ) : ?>
+            <div class="qs__blog__single__post__navigation__center__grid">
                 <a href="<?php echo esc_url( home_url('/') ) ?>"><i class="fa fa-th-large"></i></a>
             </div>
+            <?php endif; ?>
 
             <?php if( !empty($next_post) ): ?>
-            <div class="next-post">
+            <div class="qs__blog__next__post">
                 <a href="<?php echo esc_url( get_permalink($next_post->ID) ); ?>">
-                    <div class="title-with-link">
-                        <span><?php esc_html_e( 'Next Post', 'itbin' ) ?></span>
-                        <h3><?php echo esc_html( wp_trim_words( $next_post->post_title, 4, '.' ) ); ?></h3>
-                    </div>
-                    <div class="arrow-link">
-                        <i class="fa fa-arrow-right"></i>
+                    <div class="qs__navigation__title__with__link">
+                        <?php if( $show_nextprev_text == true ) : ?>
+                            <span class="qs__navigation__nextprev__text"><?php esc_html_e( 'Next Post', 'itbin' ) ?></span>
+                            <?php if( $show_icon == true ) : ?>
+                                <div class="qs__navigation__arrow__icon">
+                                    <i class="fa fa-arrow-right"></i>
+                                </div>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                        <?php if( $show_post_title == true ) : ?>
+                            <h3 class="qs__blog__post__nvigation__title"><?php echo esc_html( wp_trim_words( $next_post->post_title, 4, '.' ) ); ?></h3>
+                        <?php endif; ?>
                     </div>
                 </a>
             </div>
@@ -586,13 +607,21 @@ if ( !function_exists('quomodo_starter_theme_prefix_comments_pagination') ) {
     function quomodo_starter_theme_prefix_comments_pagination(){
         the_comments_pagination(array(
             'screen_reader_text' => ' ',
-            'prev_text'          => '<i class="ti-arrow-left"></i>',
-            'next_text'          => '<i class="ti-arrow-right"></i>',
+            'prev_text'          => '<i class="fas fa-chevron-left"></i>',
+            'next_text'          => '<i class="fas fa-chevron-right"></i>',
             'type'               => 'list',
             'mid_size'           => 1,
+            'class' => 'qs__blog__comments__pagination',
         ));
     }
 }
+
+function quomodo_starter_theme_prefix_comments_pagination_markup( $template, $class ){
+    $template = str_replace('nav-links','qs__blog__comments__pagination__links',$template);
+    return $template;
+}
+add_filter('navigation_markup_template', 'quomodo_starter_theme_prefix_comments_pagination_markup',10,2);
+
 
 /*------------------------
     COMMENTS NAVIGATION
