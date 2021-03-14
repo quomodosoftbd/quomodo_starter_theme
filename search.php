@@ -29,7 +29,7 @@ get_header();
 
 				<div class="row"><!-- Main Row Start -->
 
-					<div class="col-8 qs__blog__archives"><!-- Content Column Start -->
+					<div class="col-lg-8 col-md-12 col-sm-12 qs__blog__archives"><!-- Content Column Start -->
 						<div class="qs__blog__content">
 							<?php
 								if ( have_posts() ) :
@@ -63,7 +63,7 @@ get_header();
 					</div>
 
 
-					<div class="col-4 qs__blog__sidebar"><!-- Widget Column Start -->
+					<div class="col-lg-4 col-md-12 col-sm-12 qs__blog__sidebar"><!-- Widget Column Start -->
 						<aside class="qs__blog__widget__area">
 							<?php get_sidebar(); ?>
 						</aside>

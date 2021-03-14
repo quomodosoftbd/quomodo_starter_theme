@@ -88,7 +88,7 @@ endif;
 if ( ! function_exists( 'quomodo_starter_theme_prefix_post_in_tags' ) ) :
 	function quomodo_starter_theme_prefix_post_in_tags(){
 		if ( 'post' === get_post_type() ) {
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'quomodo_starter_theme_prefix' ) );
+			$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'quomodo_starter_theme_prefix' ) );
 			if ( $tags_list ) {
 				echo '<div class="qs__blog__post__tags__links"><i class="beicons-029-price-tag"></i> ' .  $tags_list . '</div>';
 			}

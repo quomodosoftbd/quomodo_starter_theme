@@ -17,7 +17,7 @@ get_header();
 
 				<div class="row"> <!-- Main Row Start -->
 
-					<div class="col-8 qs__blog__post"> <!-- Content Column Start -->
+					<div class="col-lg-8 col-md-12 qs__blog__post"> <!-- Content Column Start -->
 						<div class="qs__post__content">
 							<?php
 								while ( have_posts() ) :
@@ -50,7 +50,7 @@ get_header();
 						</div>						
 					</div> <!-- Content Column End -->
 
-					<div class="col-4 qs__blog__sidebar"> <!-- Widget Column Start -->
+					<div class="col-lg-4 col-md-12 qs__blog__sidebar"> <!-- Widget Column Start -->
 						<aside class="qs__blog__widget__area">
 							<?php get_sidebar(); ?>
 						</aside>

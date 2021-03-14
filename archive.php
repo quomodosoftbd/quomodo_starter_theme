@@ -23,7 +23,7 @@ get_header();
 					</div> -->
 
 
-					<div class="col-8 qs__blog__archives">
+					<div class="col-8 col-md-12 col-sm-12 qs__blog__archives">
 						<div class="qs__blog__content">
 							<?php
 								if ( have_posts() ) :
@@ -57,7 +57,7 @@ get_header();
 					</div>
 
 
-					<div class="col-4 qs__blog__sidebar">
+					<div class="col-4 col-md-12 col-sm-12 qs__blog__sidebar">
 						<aside class="qs__blog__widget__area">
 							<?php get_sidebar(); ?>
 						</aside>
