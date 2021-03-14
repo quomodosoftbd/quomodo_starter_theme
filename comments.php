@@ -67,17 +67,19 @@ if ( post_password_required() ) {
 				<?php quomodo_starter_theme_prefix_comments_pagination(); ?>
 			</div>
 			
-			<div class="qs__blog__colse__comment">
-				<?php if ( ! comments_open() ) : ?>
+			<?php if ( ! comments_open() ) : ?>
+				<div class="qs__blog__colse__comment">
 					<p class="qs__block__no__comments__msg"><?php esc_html_e( 'Comments are closed.', 'quomodo_starter_theme_prefix' ); ?></p>
-				<?php endif; ?>
-			</div>
+				</div>
+			<?php endif; ?>
 
 		<?php endif; // Check for have_comments(). ?>
-
-		<div class="qs__blog__comment__form">
-		  <?php quomodo_starter_theme_prefix_comment_form() ?>
-		</div>
+		
+		<?php if ( comments_open() ) : ?>
+			<div class="qs__blog__comment__form">
+			<?php quomodo_starter_theme_prefix_comment_form() ?>
+			</div>
+		<?php endif; ?>
 		
 	</div> <!-- Comments Area Start -->
 </div> <!-- Comments Container Start -->

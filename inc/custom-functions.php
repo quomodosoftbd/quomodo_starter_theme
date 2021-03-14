@@ -357,10 +357,10 @@ add_filter( 'comment_form_defaults', 'quomodo_starter_theme_prefix_comment_form_
 
 function quomodo_starter_theme_prefix_comment_form(){
     // theme option panel 
-    $comment_fld_cookie = quomodo_starter_theme_prefix_get_option('comment_cookie'); 
-    $comment_fld_url = quomodo_starter_theme_prefix_get_option('comment_url'); 
-    $comment_arg_be_note = quomodo_starter_theme_prefix_get_option('comment_before_note'); 
-    $comment_arg_after_note = quomodo_starter_theme_prefix_get_option('comment_after_note'); 
+    $comment_fld_cookie     = quomodo_starter_theme_prefix_get_option('comment_cookie');
+    $comment_fld_url        = quomodo_starter_theme_prefix_get_option('comment_url');
+    $comment_arg_be_note    = quomodo_starter_theme_prefix_get_option('comment_before_note');
+    $comment_arg_after_note = quomodo_starter_theme_prefix_get_option('comment_after_note');
      
         //Declare Vars
     $comment_send      = esc_html__('Submit Comment','quomodo_starter_theme_prefix');
@@ -680,14 +680,16 @@ if ( !function_exists('quomodo_starter_theme_prefix_search_form') ) {
 -------------------------------*/
 if ( !function_exists('quomodo_starter_theme_prefix_password_form') ) {
     function quomodo_starter_theme_prefix_password_form($form) {
-    global $post;
-    $label  =   'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
-    $form   =   '<form class="protected-post-form" action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
-                    <span>'.esc_html__( "To view this protected post, enter the password below:", 'itbin' ).'</span>
-                    <input name="post_password" id="' . $label . '" type="password"  placeholder="'.esc_attr__( "Enter Password", 'itbin' ).'">
-                    <input type="submit" name="Submit" value="'.esc_attr__( "Submit",'itbin' ).'">
-                </form>';
-    return $form;
+        global $post;
+        $label  =   'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
+        $form   =   '<form class="qs__blog__post__pass__form" action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
+                        <span>'.esc_html__( "To view this protected post, enter the password below:", 'itbin' ).'</span>
+                        <input name="post_password" id="' . $label . '" type="password"  placeholder="'.esc_attr__( "Enter Password", 'itbin' ).'">
+                        <button type="submit" name="Submit">'.esc_attr__( "Submit",'itbin' ).'</button>
+
+                    </form>';
+
+        return $form;
     }
 }
 add_filter( 'the_password_form', 'quomodo_starter_theme_prefix_password_form' );
