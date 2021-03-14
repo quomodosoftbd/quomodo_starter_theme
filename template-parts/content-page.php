@@ -24,7 +24,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<?php if ( get_edit_post_link() ) : ?>
+	<?php if ( get_edit_post_link() && is_single() ) : ?>
 		<div class="qs__blog__page__edit__area">
 			<?php
 				edit_post_link(

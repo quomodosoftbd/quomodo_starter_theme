@@ -12,11 +12,11 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="qs__post__inner__content">
 
-		<?php //if( has_post_thumbnail() ) : ?>
+		<?php if( has_post_thumbnail() ) : ?>
 		<div class="qs__post__media">
 			<?php quomodo_starter_theme_prefix_post_thumbnail(); ?>
 		</div>
-		<?php //endif; ?>
+		<?php endif; ?>
 
 		<div class="qs__post__content__area">
 
