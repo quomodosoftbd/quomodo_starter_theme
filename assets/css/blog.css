@@ -21,6 +21,12 @@ Blog Posts
     --post_border: 1px solid #e1e1e1;
     --post_content_border: 1px solid #e1e1e1;
 }
+/*
+Blog Post Details
+---------------------- */
+:root{
+    --blog_details_heading_margin_bottom: 15px;
+}
 
 /*
 Main Sidebar Widgets
@@ -201,21 +207,26 @@ input:-webkit-autofill:hover {
 /* ----------------------------------
     BLOG POSTS PAGINATION
 -------------------------------------*/
-.qs__blog__posts__pagination {
+.qs__blog__posts__pagination,
+.qs__blog__comments__pagination {
     margin-top: 50px;
 }
-.qs__blog__posts__pagination ul {
+.qs__blog__posts__pagination ul,
+.qs__blog__comments__pagination ul {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.qs__blog__posts__pagination ul li {
+.qs__blog__posts__pagination ul li,
+.qs__blog__comments__pagination ul li {
     display: inline;
 }
 
 .qs__blog__posts__pagination ul li a,
-.qs__blog__posts__pagination ul li span {
+.qs__blog__posts__pagination ul li span,
+.qs__blog__comments__pagination ul li a,
+.qs__blog__comments__pagination ul li span {
     display: inline-block;
     width: 50px;
     height: 50px;
@@ -232,7 +243,9 @@ input:-webkit-autofill:hover {
     transition: 0.3s;
 }
 .qs__blog__posts__pagination ul li a:hover,
-.qs__blog__posts__pagination ul li span.current {
+.qs__blog__posts__pagination ul li span.current,
+.qs__blog__comments__pagination ul li a:hover,
+.qs__blog__comments__pagination ul li span.current {
     background: dodgerblue;
     color: #fff;
     border: 1px solid dodgerblue;
@@ -258,6 +271,7 @@ input:-webkit-autofill:hover {
 
 .qs__post__content .qs__post__details {
     margin-top: 20px;
+    overflow: hidden;
 }
 
 .qs__post__content .qs__post__footer {
@@ -279,14 +293,254 @@ input:-webkit-autofill:hover {
     color: #fff;
 }
 
+.qs__post__details h1,
+.qs__post__details h2,
+.qs__post__details h3,
+.qs__post__details h4,
+.qs__post__details h5,
+.qs__post__details h6{
+    margin-bottom: var( --blog_details_heading_margin_bottom );
+}
+
+.qs__post__details ul,
+.qs__post__details ol {
+    margin-top: 20px;
+}
+.qs__post__details ul ul,
+.qs__post__details ol ol{
+    margin-top:0;
+}
+.qs__post__details ul li,
+.qs__post__details ol li {
+    margin-bottom: 7px;
+}
+.qs__post__details figcaption {
+    text-align: center;
+}
+
+.qs__post__details .alignleft,
+.qs__post__details .alignright {
+    clear: both;
+}
+
+.qs__post__details * [class^="wp-block-"] {
+    margin-bottom: 25px;
+}
+.qs__post__details * [class^="wp-block-"]:last-child{
+    margin-bottom: 0;
+}
+
+.wp-block-cover.has-background-dim {
+    color: #ffffff;
+}
+
+.wp-block-cover.has-background-dim,
+.wp-block-cover.has-background-dim + p {
+    margin-bottom: 25px;
+}
+.wp-block-cover.has-background-dim:last-child {
+    margin-bottom: 0;
+}
+.has-background-dim.has-parallax {
+    margin-bottom: 12px;
+}
+
+.qs__single__post .qs__post__media {
+    margin-bottom: 30px;
+}
+
+ul.blocks-gallery-grid {
+    margin-top: 0;
+}
+.wp-block-gallery,
+.wp-block-gallery + p {
+    margin-bottom: 20px;
+}
+.wp-block-gallery:last-child {
+    margin-bottom: 0;
+}
+.wp-block-media-text .wp-block-media-text__media {
+    margin-bottom: 0;
+}
+.wp-block-columns + p {
+    margin-bottom: 15px;
+}
+.qs__single__post .qs__post__details blockquote {
+    background: #ebebeb;
+    padding: 20px;
+    border-radius: 5px;
+}
+figure.wp-block-video:last-child {
+    margin-bottom: 0;
+}
+.gallery-item figcaption {
+    margin-top: 10px;
+}
+
+.wp-block-archives {
+    margin-bottom: 30px;
+    list-style: none;
+    padding-left: 0;
+    border-left: 1px solid #ebebeb;
+}
+
+.wp-block-archives li {
+    margin-bottom: 7px;
+    position: relative;
+}
+
+.wp-block-archives li:before {
+    width: 24px;
+    height: 1px;
+    background: #ebebeb;
+    content: "";
+    display: inline-block;
+    position: relative;
+    bottom: 5px;
+    margin-right: 5px;
+}
+
+.wp-block-archives-dropdown {
+    margin-bottom: 30px;
+}
+
+.qs__post__details select {
+    width: 100%;
+    padding: 10px 15px;
+}
+
+.wp-block-calendar {
+    margin-bottom: 30px;
+}
+
+.wp-block-categories-dropdown {
+    margin-bottom: 30px;
+}
+
+.wp-block-latest-comments {
+    margin-bottom: 30px;
+}
+
+.wp-block-latest-comments .wp-block-latest-comments__comment-meta {
+    margin-bottom: 9px;
+}
+
+.wp-block-latest-posts {
+    margin-bottom: 30px;
+}
+
+.wp-block-latest-posts li {
+    margin-bottom: 20px;
+}
+
+
+.wp-block-search__inside-wrapper {
+    position: relative;
+}
+
+.qs__post__details .wp-block-search input {
+    width: calc( 100% - 130px );
+    padding: 10px 20px;
+    border: 1px solid #ebebeb;
+}
+
+
+.wp-block-search__input {
+    margin-bottom: 0 !important;
+}
+
+.qs__post__details .wp-block-search button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 130px;
+    height: 100%;
+    border: 0;
+}
+
+.wp-block-search {
+    margin-bottom: 30px;
+}
+
+.wp-block-tag-cloud {
+    margin-bottom: 30px;
+}
+
+.wp-block-tag-cloud a {
+    display: inline-block;
+    font-size: 16px !important;
+    padding: 6px 20px;
+    background: #f8f9fa;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.wp-block-tag-cloud a:hover {
+    background: dodgerblue;
+    color: #ffffff;
+}
+
+ul.wp-block-rss {
+    margin-bottom: 0;
+}
+
+ul.wp-block-rss li.wp-block-rss__item {
+    margin-bottom: 15px;
+}
+.qs__single__post .qs__post__details .wp-block-group__inner-container {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.wp-block-media-text {
+    margin-bottom: 30px;
+}
+.qs__post__details pre {
+    background: #f8f9fa;
+    padding: 15px;
+    color: #ef3d98;
+    margin-top: 20px;
+}
+.qs__post__details pre code{
+    color: #ef3d98;
+}
+
+table {
+    border-bottom: 1px solid #ebebeb;
+    border-right: 1px solid #ebebeb;
+    margin-bottom: 20px;
+}
+
+table tr, table td {
+    border-top: 1px solid #ebebeb;
+    border-left: 1px solid #ebebeb;
+    padding: 8px;
+}
+
+table tr th {
+    border-right: 1px solid #ebebeb;
+    padding: 8px;
+}
+
+table thead {
+    background: #1e90ff;
+    color: #ffffff;
+}
+
+table tr th a {
+    color: inherit;
+}
 /* -----------------------------------
     BLOG POST NAVIGATION
 -------------------------------------- */
 .qs__blog__posts__navigation {
+    border-top: 1px solid #ebebeb;
     margin-top: 50px;
+    padding-top: 50px;
 }
 .qs__blog__single__post__navigation {
     position: relative;
+    overflow: hidden;
 }
 
 .qs__blog__prev__post{
@@ -338,6 +592,155 @@ input:-webkit-autofill:hover {
     font-size: 50px;
     line-height: 1;
     height: 100%;
+}
+
+/* ----------------------------------
+    BLOG COMMENTS PAGINATION
+---------------------------------- */
+.qs__blog__comments__container {
+    margin-top: 50px;
+}
+.qs__blog__comments__title {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ----------------------------------
+    BLOG COMMENTS AREA
+---------------------------------- */
+.qs__blog__comments__lists__area {
+    margin-top: 50px;
+}
+
+.qs__post__comment__item {
+    border-top: 1px solid #ebebeb;
+    margin-top: 30px;
+    padding-top: 30px;
+}
+.qs__blog__comments__list > div:first-child {
+    padding-top: 50px;
+}
+.qs__post__comment__body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.qs__post__comment__meta {
+}
+
+.qs__post__comment__vcard {
+    display: flex;
+    align-items: center;
+}
+
+.qs__post__comment__content {
+    margin-top: 15px;
+}
+
+.qs__post__comment__meta__date {
+    margin-top: 10px;
+}
+
+.qs__post__comment__reply {
+    order: -1;
+    text-align: right;
+    position: absolute;
+    right: 5px;
+    top: 0;
+}
+.qs__post__comment__meta__date .qs__comment__edit__link {
+    display: inline-block;
+    margin-left: 10px;
+}
+.qs__post__comment__author__name {
+    margin-left: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.qs__post__comment__author__name .says {
+    margin-left: 7px;
+    font-weight: 500;
+    font-size: 14px;
+}
+.qs__post__parent__comment .qs__post__comment__item {
+    padding-left: 30px;
+}
+
+/* ------ LAYOUT THREE ------ */
+.qs__blog__comment__author__and__comment__date {
+    padding-left: 15px;
+    line-height: 1;
+}
+
+.qs__blog__comment__author__and__comment__date .qs__post__comment__author__name {
+    margin-left: 0;
+}
+
+.qs__comment__formet__c .qs__comment__author__thumb {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.qs__comment__formet__c .qs__comment__edit__link {
+    margin-top: 15px;
+}
+
+/* ----- COMMENTS FORMS ---- */
+.qs__blog__comment__form {
+    margin-top: 50px;
+    border-top: 1px solid #ebebeb;
+    padding-top: 50px;
+}
+.qs__blog__comment__form__title__header {
+    margin-bottom: 20px;
+}
+.qs__blog__comment__comment__reply__title {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+}
+.qs__blog__comment__comment__reply__title small {
+    font-size: 14px;
+}
+.qs__blog__comment__logged__in__as {
+    margin-bottom: 10px;
+}
+.qs__blog__comment_form_action input,
+.qs__blog__comment_form_action textarea {
+    width: 100%;
+    min-height: 45px;
+    max-height: 140px;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    border: 1px solid #ebebeb;
+}
+
+.qs__blog__comment__form__submit {
+    margin-top: 5px;
+}
+.qs__blog__comment__submit {
+    line-height: 1;
+    padding: 15px 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    margin: 0;
+    border: 0;
+    transition: 0.3s;
+    background: #ebebeb;
+}
+.qs__blog__comment__submit:hover,
+.qs__blog__comment__submit:focus {
+    background: dodgerblue;
+    color: #ffffff;
+}
+.qs__post__comment__item .qs__blog__comment_form_responds {
+    margin-top: 30px;
+    border-top: 1px solid #ebebeb;
+    padding-top: 30px;
 }
 /* ===================================
     BLOG WIDGETS STYLES

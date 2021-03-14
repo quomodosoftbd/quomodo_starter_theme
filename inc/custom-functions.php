@@ -363,7 +363,7 @@ function quomodo_starter_theme_prefix_comment_form(){
     $comment_arg_after_note = quomodo_starter_theme_prefix_get_option('comment_after_note'); 
      
         //Declare Vars
-    $comment_send      = esc_html__('Send','quomodo_starter_theme_prefix');
+    $comment_send      = esc_html__('Submit Comment','quomodo_starter_theme_prefix');
     $comment_reply     = esc_html__('Leave a Message','quomodo_starter_theme_prefix');
     $comment_reply_to  = esc_html__('Reply','quomodo_starter_theme_prefix');
     $comment_author    = esc_html__('Name','quomodo_starter_theme_prefix');
@@ -391,14 +391,14 @@ function quomodo_starter_theme_prefix_comment_form(){
         'label_submit' => $comment_send,
         // Change the title of the reply section
         'title_reply'        => $comment_reply,
-        'title_reply_before' => '<h3 id="qs__blog__comment__comment__reply__title" class="qs__blog__comment__comment__reply__title">',
-        'title_reply_after'  => '</h3>',
+        'title_reply_before' => '<div class="qs__blog__comment__form__title__header"><h3 id="qs__blog__comment__comment__reply__title" class="qs__blog__comment__comment__reply__title">',
+        'title_reply_after'  => '</h3></div>',
         // Change the title of the reply section
         'title_reply_to' => $comment_reply_to,
         //Cancel Reply Text
         'cancel_reply_link' => $comment_cancel,
         // Redefine your own textarea (the comment body).
-        'comment_field' => '<div class="row"><div class="col-12"><div class="qs__blog__comment__form__comment"><textarea id="qs__blog__comment_textarea" name="comment" aria-required="true" placeholder="' . $comment_body .'"></textarea></div></div></div>',
+        'comment_field' => '<div class="row"><div class="col-12"><div class="qs__blog__comment__form__comment"><textarea rows="10" id="qs__blog__comment_textarea" name="comment" aria-required="true" placeholder="' . $comment_body .'"></textarea></div></div></div>',
         //Message Before Comment
         'comment_notes_before' => $comment_before,
         // Remove "Text or HTML to be displayed after the set of comment fields".
@@ -407,7 +407,7 @@ function quomodo_starter_theme_prefix_comment_form(){
         'id_submit'       => 'qs__blog__comment__submit',
         'class_submit'    => 'qs__blog__comment__submit',
         'name_submit'     => $name_submit,
-        'submit_button'   => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
+        'submit_button'   => '<button name="%1$s" type="submit" id="%2$s" class="%3$s">%4$s</button>',
         'submit_field'    => '<div class="row"><div class="col-12"><div class="qs__blog__comment__form__submit">%1$s %2$s</div></div></div>',
         'class_container' => 'qs__blog__comment_form_responds',
         'class_form'      => 'qs__blog__comment_form_action',
