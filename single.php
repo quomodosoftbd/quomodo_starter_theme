@@ -22,8 +22,11 @@ get_header();
 							<?php
 								while ( have_posts() ) :
 									the_post();
-
-									get_template_part( 'template-parts/content', get_post_type() );
+									if( defined( 'ELEMENTOR_VERSION' ) && \Elementor\Plugin::$instance->editor->is_edit_mode() ){
+										the_content();
+									}else{
+										get_template_part( 'template-parts/content', get_post_type() );
+									}
 									?>
 									
 									<div class="qs__blog__posts__navigation">
